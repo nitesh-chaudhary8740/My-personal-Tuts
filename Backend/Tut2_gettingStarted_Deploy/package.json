@@ -1,0 +1,19 @@
+{
+  "name": "tut2_getting_started_deploy",
+  "version": "1.0.0",
+  "description": "getting started with chai tuts 2nd vid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "nik"
+  ],
+  "author": "nitesh chaudhary",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

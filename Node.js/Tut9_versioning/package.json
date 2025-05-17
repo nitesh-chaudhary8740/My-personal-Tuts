@@ -1,0 +1,23 @@
+{
+  "name": "tut8_express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
+// 5 --> major upadte
+// 1 --> recommended
+// 0 --> minor updates 
+//^ carret prevent major update if update will go from 5 to 6 it will not update the package
+//major update can be done by manually
+//~ it will prevent recommended
+//only verison 5.1.0 (fixed)
+//5.1.0 - 5.9.0 //range
+//npm docs link- https://docs.npmjs.com/cli/v10/configuring-npm/package-json?v=true

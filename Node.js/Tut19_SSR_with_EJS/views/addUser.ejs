@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+<body>
+    <form action="/addUser" method="post">
+        <label for="fname">Enter First Name: </label> 
+        <input type="text" id="fname" name="first_name" required><br><br>
+        
+        <label for="lname">Enter Last Name: </label> 
+        <input type="text" id="lname" name="last_name" required><br><br>
+        
+        <label for="email">Email:</label> 
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="gender">Gender: </label>:
+        <label for="male">Male </label> 
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="female"> Female</label> 
+        <input type="radio" id="female" name="gender" value="female" required> <br><br>
+        
+        <label for="job">Enter Job title: </label> 
+        <input type="text" id="job" name="job_title" required>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

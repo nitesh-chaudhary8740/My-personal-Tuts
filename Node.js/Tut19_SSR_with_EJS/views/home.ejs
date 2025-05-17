@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table th, table td{
+            border: 2px solid;
+            padding: 1vh;
+            text-align: center;
+      
+            /* color: blue; */
+        }
+    </style>
+</head>
+<body>
+    <table >
+        <thead>
+            <tr>
+                <% Object.keys(users[0].toObject()).forEach((key) => { %>
+                    <% if (key!=='_id' && key!=="createdAt" && key!== "updatedAt" && key!=="__v") { %>
+                        <th><%= key %></th>  
+                    <% } %>
+                <% }); %>
+              </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+             <tr>
+                <td><%= user.firstName %></td>
+                <td><%= user.lastName%></td>
+                <td><%= user.email %></td>
+                <td><%= user.jobTitle%></td>
+                <td><%= user.gender %></td>
+             </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/addUser">add</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rootEle">
+
+    </div>
+    <script>
+        let myEle = ['<div>div1</div>','<div>div2</div>','<div>div3</div>',343,'342342'];
+        console.log(myEle.map(e=>e));
+        document.querySelector('.rootEle').innerHTML = myEle.map(e=>e)
+    </script>
+</body>
+</html>

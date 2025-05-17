@@ -1,0 +1,16 @@
+console.log("2"<1)
+console.log("2">1)
+console.log("2">3)
+console.log("2"<3 , typeof("2"<3))
+console.log(null>0)
+console.log(null==0)
+console.log(null>=0)//uncertain behaviour
+console.log(null<=0)//uncertin bheviour
+console.log(null===0)
+console.log(undefined)
+console.log(undefined>0)
+console.log(undefined<0)
+console.log(undefined<=0)
+console.log(undefined>=0)
+console.log(undefined==0)
+console.log(undefined===0)

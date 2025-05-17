@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h2>URL Shortner</h2>
+    <form action="/generate" method="post">
+        <label for="url">Enter your URL: </label><br><br>
+        <input type="text" id="url" name="originalURL"> 
+        <button type="submit">Generate</button>
+    </form>
+  <% if (locals.shortedURL) { %>
+  <div>
+    <a href="nik.ly/<%= locals.shortedURL %>">Shortened URL is <%= locals.shortedURL %></a>
+  </div>
+<% } %>
+    <br><br>
+    <% if (locals.urls) { %>
+     <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Original URL</th>
+                <th>Sorted URL</th>
+                <th>Total Visits</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% locals.urls.forEach((url,index) => { %>
+             <tr>
+                <td></a><%= index+1 %></td>
+                <td><%= url.originalURL %></td>
+                <td><a href="/nik.ly/<%= url.shortURL %>">nik.ly/<%= url.shortURL %></a></td>
+                <td><%= url.visitHistory.length %></td>
+            </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+    <% } %>
+    
+    
+</body>
+</html>
