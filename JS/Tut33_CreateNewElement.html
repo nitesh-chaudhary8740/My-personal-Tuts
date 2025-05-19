@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wedday</div>
+        <div class="day">thursday</div>
+        <div class="day">friday</div>
+        <div class="day">saturday</div>
+        <div class="day">sunday</div>
+    </div>
+   
+</body>
+ <script>
+        const parent = document.querySelector('.parent');//select single element
+        console.log(parent);
+        console.log(parent.children);//returns html collection
+        console.log(parent.children[1].innerHTML);//accessing single element of html collection
+        //accessing all
+        for (let index = 0; index < parent.children.length; index++) {
+            console.log( parent.children[index].innerHTML)
+            parent.children[index].style.color = 'orange'
+        }
+        console.log(parent.firstElementChild.innerHTML)//accessing first child
+        console.log(parent.lastElementChild.innerHTML)//asccessing last child
+        //accessing first element of parent
+        const firstDay = parent.querySelector('.day')
+        //instead of traversing entire document tree just started traverse from parent node(reduce traversal for expensive function 'queryselector')
+        console.log(firstDay)
+        console.log(firstDay.parentElement)
+        console.log(firstDay.nextElementSibling.innerHTML)
+        //here only instead of using querySelector(expensive function call) used parentElement
+        //be aware of using loops over nodelist nodelist might contains text nodes and element nodes both
+        //and enter 'line break' and spaces ' ' are considered child nodes too
+        console.log("nodes:",parent.childNodes)//15 nodes//but only 7 are element nodes/rest are text nodes
+        const newDiv = document.createElement('div')
+        console.log(newDiv)
+        newDiv.className = 'main';
+        newDiv.id = 'id'+Math.round(Math.random()*20+1)
+        newDiv.setAttribute ('tile','generatedTitle');
+        newDiv.style.backgroundColor = '#212121'
+        newDiv.style.color = '#ffff'
+        const addText = document.createTextNode('A new div container originated dynamically through JS')
+        //createTextNode is very useful it won't disturb child elements of that particular element
+        newDiv.appendChild(addText)//added text node to element
+        document.body.appendChild(newDiv);//child added to body tag
+
+    </script>
+</html>

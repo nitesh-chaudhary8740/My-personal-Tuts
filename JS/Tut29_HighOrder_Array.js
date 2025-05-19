@@ -53,3 +53,13 @@ const programming = ['js','java','c++','ruby']
 for (const index in programming) { //here it will return index
 console.log(index)
 }
+console.log("iterating over map")
+for (const key in map) { //nothing happened
+console.log(key)
+}
+//=====forEach for array ===================
+// hunter.forEach(key=>console.log(key)) //cannot iterate over object
+programming.forEach((element,index,entireArray)=>
+    console.log(element,index,entireArray)
+)
+//for each didn't return any value even we put explicit return in callback

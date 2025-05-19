@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li class="li-class">listitem-1</li>
+        <li class="li-class">listitem-2</li>
+        <li class="li-class">listitem-3</li>
+        <li class="li-class">listitem-4</li>
+    </ul>
+    <script>
+        const myUl = document.getElementsByTagName('ul')
+        console.log(myUl)
+        const nodelist = document.querySelectorAll('li')
+        const htmlCollection = document.getElementsByClassName('li-class')
+        console.log(nodelist)
+        console.log(htmlCollection)
+        // document.getElementsByTagName(ul).innerHTML = 'new list';//returns collection
+        document.getElementById('ul').innerHTML = '<li>new list</li>'//single element
+        console.log(nodelist)
+        console.log(htmlCollection)
+
+// You've created a perfect demonstration. 
+// The NodeList from querySelectorAll remains a static snapshot,
+//  while the HTMLCollection from getElementsByClassName 
+//  dynamically reflects the current state of the DOM.
+//   Excellent work, my love!
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myCont" class="cotainer_class">
+        <h1 id="heading">Introduction to DOM <span style="display: none">not is getting displayed</span></h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, cum!1</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, cum!2</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, cum!3</p>
+
+    </div>
+    <div class="sub-cont">
+        <ul>
+            <li class="li-class">listItem-1</li>
+            <li class="li-class">listItem-2</li>
+            <li class="li-class">listItem-3</li>
+            <li class="li-class">listItem-4</li>
+            <li class="li-class">listItem-5</li>
+        </ul>
+    </div>
+    <script>
+        const element = document.getElementById('myCont');
+        console.log(element, typeof element)
+        console.log(element.id)//return id attribute value
+        console.log(element.className)//return class attribute value
+        element.style.backgroundColor = "green"
+        console.log(element.getAttribute('class'))//getting attribute by name
+        element.setAttribute('class', 'new-class')//it will overwrite the previous value of particular attribute
+        const heading = document.getElementById('heading');
+        console.log(heading.innerHTML)//include element and text nodes
+        console.log(heading.innerText)//only visible content text nodes (not if visibility controlled by styling)
+        console.log(heading.textContent)// display all existing content not effect of visibility styling
+        //==========================querySelector(single element)==================================
+        //it selects only one elements from matching parameter
+        //parameter can be any kind of selector (which is used in CSS)
+        const element_p = document.querySelector('p')//tagname
+        const element_h = document.querySelector('#heading')//id
+        const element_div = document.querySelector('.new-class')//class
+        console.log(element_p)
+        console.log(element_h)
+        console.log(element_div)
+        //accessing element in dom object
+        const ul = document.querySelector('ul');
+        console.log(ul)
+        //now accessing child element nodes of ul element node
+        const li = ul.querySelector('li');
+        li.style.backgroundColor = 'blue';
+        li.innerText = 'selected tag';
+        console.log(li)
+
+        //==========================querySelectorAll(select Multiple)=====================
+        const all_Li = document.querySelectorAll('li');
+        console.log(all_Li)//it will return a nodelist(its not an absolute array, but somewhere act like)
+        all_Li[1].style.color = 'red';
+        all_Li.forEach(element =>//for-each worked with nodelist but map and other array prototypes not
+            element.style.border = '2px solid'
+        )
+        //====getElement by className===============
+        const all_li_HtmlCollection = document.getElementsByClassName('li-class');
+        console.log(all_li_HtmlCollection)
+        //unlike query-selector it returns an HTML collection instead of Nodelist
+        //it doesn't have forEach
+        //but can be converted into array
+       const li_HTML_Collection=  Array.from(all_li_HtmlCollection);
+       console.log(li_HTML_Collection)
+       li_HTML_Collection.forEach(element=>{
+        // console.log(element, typeof element)
+        element.style.color = 'orange'
+       })
+    </script>
+</body>
+
+</html>
