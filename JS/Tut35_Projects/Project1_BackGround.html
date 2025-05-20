@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 2vh;
+            /* border: 2px solid; */
+            justify-content: center;
+        }
+
+        .color {
+            height: 10vh;
+            width: 10vh;
+        }
+
+        #gray {
+            background-color: gray;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+      #orange {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Background Color </h1>
+    <div class="container">
+        <div id="gray" class="color"></div>
+        <div id="green" class="color"></div>
+        <div id="orange" class="color"></div>
+        <div id="blue" class="color"></div>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quia quam inventore, vel mollitia expedita magnam
+        ullam repellendus esse nisi cupiditate iste rem optio voluptates recusandae autem perferendis! Voluptatum, ea.
+    </p>
+</body>
+<script>
+    const colors = document.querySelectorAll('.color');
+    let color = 'white';
+    colors.forEach(colorElement => {//does in this code forEach didn't left the stack
+        colorElement.addEventListener('click', (event) => {
+            const currentTargetElement = event.target;
+            const currentElementId = currentTargetElement.id;
+            if (currentElementId === color) {
+                color = 'white'
+                document.body.style.backgroundColor = color;
+                currentTargetElement.style.border = 'none'
+                console.log(color,currentElementId)           
+            }
+            else {
+                 color = currentElementId;
+               console.log(color,currentElementId)
+                document.body.style.backgroundColor = `${color}`
+                colors.forEach(element => {
+                    if (element.id === currentElementId) {
+                        element.style.border = '2px solid'
+                    }
+                    else {
+                        element.style.border = 'none'
+                    }
+                })
+                 
+            }      
+        })
+    })
+</script>
+
+</html>

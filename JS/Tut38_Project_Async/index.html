@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">Async Exercises</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const timeBefore = Date.now()
+    const h1 = document.querySelector('#h1')
+   const timeout =  setTimeout(() => {
+    h1.innerHTML = 'New html is added through timeout'
+    const timeInsideSetTimeout = Date.now()
+        console.log((timeInsideSetTimeout-timeBefore).toString())
+        console.log('nitesh')
+    }, 2000);
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(timeout)
+        console.log("set-timeout is stoped")
+    })
+</script>
+</html>

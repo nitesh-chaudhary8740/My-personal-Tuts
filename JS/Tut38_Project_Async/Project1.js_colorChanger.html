@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Background Color changer through setTimeInterval</h1>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+    </div>
+</body>
+<script>
+    (function () {
+        let intervalId = null;
+        const startBtn = document.querySelector('#start');
+        const stopBtn = document.querySelector('#stop');
+        startBtn.addEventListener('click', startChanger)
+        stopBtn.addEventListener('click', stopChanger)
+        stopBtn.disabled = true;
+        //this problem can be solved through btn too, but still use existing interval and null check,
+        //for better code
+        function startChanger() {
+            if (intervalId) {
+                clearInterval(intervalId)//to avoid creation of new interval if there is existing one
+                console.log('old interval is cleared and new is created')
+            }
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            document.body.style.backgroundColor = backGoundChanger()
+            intervalId = setInterval(() => {
+                //as many times start will be called a new interval will be created and stored it in intervalId
+                //but old will be still remains and their reference will be get lost, so they will hard to target
+                let color = backGoundChanger()
+                console.log(color)
+                document.body.style.backgroundColor = color;
+
+            }, 1000);
+        }
+        function stopChanger() {
+            if (!intervalId) {
+                console.log('nothing to clear')
+            }
+            else {
+                console.log(intervalId)
+                clearInterval(intervalId)
+                console.log(intervalId, 'is stoped')
+                intervalId = null;
+                startBtn.removeAttribute('disabled')
+                stopBtn.setAttribute('disabled', 'true')
+            }
+
+        }
+        function backGoundChanger() {
+            const hex = "0123456789ABCDEF";
+            let colorCode = '#'
+            for (let index = 0; index < 6; index++) {
+                colorCode += hex[Math.floor(Math.random() * 16)]
+            }
+            return colorCode;
+        }
+    })();
+
+</script>
+
+</html>

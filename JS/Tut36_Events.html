@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 2px solid;
+            padding: 4px;
+            width: 15vh;
+        }
+        .list{
+            border: 2px solid;
+            padding: 2px;
+            margin: 2px;
+            width: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <ul id="main">
+        <li id="id-1" class="list"><span>listItem-1</span></li>
+        <li id="id-2" class="list"><span>listItem-2</span></li>
+        <li id="id-3" class="list"><span>listItem-3</span></li>
+        <li id="id-4" class="list"><span>listItem-4</span></li>
+        <li id="id-5" class="list"><span>listItem-5</span></li>
+    </ul>
+</body>
+<script>
+//     document.getElementById('main')
+//     .addEventListener('click'
+//     ,function(event){
+//         console.log('ul is clicked')
+//     },true) //last argument is called event propogation(by default false)
+//     //false(bubbling->source element to final parent element)
+//     //true(capturing)-> Final Parent element to source element
+//    document.getElementById('id-1')
+//     .addEventListener('click'
+//     ,function(event){
+//         console.log('li is clicked')
+//         console.log('type',event.type)//click
+//         console.log('target',event.target)//li
+//         console.log('currentTarget',event.currentTarget)//li
+//         console.log('phase',event.eventPhase)//2
+//         console.log('timestamp',event.timeStamp)//timestamp = when_page_Loaded - event_occured
+//     },true)
+//         //true(capturing)-> Final Parent element to source element
+//    document.getElementById('id-1')
+//     .addEventListener('mousemove',function(event){
+//         event.currentTarget.style.color='red'
+//         console.log(event.clientX,event.clientY)//browser window (website page shrink grow can affect)//relative to viewport
+//         console.log(event.pageX,event.pageY)//can't see any difference from clientX and clientY
+//         console.log(event.screenX,event.screenY)//can't see any difference from clientX and clientY
+//         console.log(event.offsetX,event.offsetY)//can't see any difference from clientX and clientY
+//         event.stopImmediatePropagation()//to stop propogation
+//     })
+    
+//     //why mouseover is feels like click?
+//     //mouseout only activated when I clicked on targeted element and clicked outside of element
+//     //mousedown is also felt like click
+//     //mouseup is also felt like click
+//     //mousemove is also felt like click
+//     document.body.addEventListener('click',(event)=>{
+//         console.log(event.clientX,event.clientY)//browser window (website page shrink grow can affect)//relative to viewport
+//         console.log(event.pageX,event.pageY)//can't see any difference from clientX,clientY in pageX and pageY
+//         console.log(event.screenX,event.screenY)
+//         console.log(event.offsetX,event.offsetY)
+
+//     })
+    document.querySelector('#main').addEventListener('click',
+        function(event){
+            // event.stopPropagation()
+            console.log(event.target)//where clicked
+            console.log(event.target.parentNode)
+            console.log(event.currentTarget)//where event is applied
+            console.log('tagname',event.target.tagName)
+            // console.log(event.currentTarget.children)
+            if(event.target.tagName==="SPAN"||'LI'){
+                if(event.target.tagName==="LI"){
+                     event.target.remove();
+                     console.log(event.target.parentNode)
+                     //event.stopPropogation() is commented so comment can reach further levels of tree li->ul->body->html(document)
+                     //if I uncommnet the  event.stopPropogation() event will not propogate, and event will end on first level of targeted element(event.target);
+                     return;
+                }
+               event.target.parentNode.remove();
+               //also learn about element.removeChild()
+            
+            }
+           
+        }
+    )
+</script>
+</html>

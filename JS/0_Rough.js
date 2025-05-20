@@ -1,17 +1,9 @@
-const obj = {
-    key1:'value1',
-    key2:'value2',
-    func1:function(){
-        console.log(this.key1);
-        (()=>{
-            console.log(this.key2)
-        })();
-    },
-    func2:()=>{
-        console.log(this.key2)
-    },
-  
-}
 
-obj.func1()
-obj.func2()
+const name = 'nitesh';
+const arr=['reference object'];
+const timeout = setTimeout(() => {
+  
+   console.log(arr[0])
+   //if sayHello function left the stack name more like will be undefined or cause ref error
+}, 0);
+

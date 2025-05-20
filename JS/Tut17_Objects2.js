@@ -11,6 +11,7 @@ const obj1 = {
 const newObj = new Object(obj1); //obj1 === newObj passed reference to newObj
 console.log(newObj.fullname.fname)
 const newIntance = Object.create(obj1);//creates new instance
+console.log('is equal',newIntance==obj1)
 newIntance.id='333'
 console.log(obj1)
 console.log(newIntance)
