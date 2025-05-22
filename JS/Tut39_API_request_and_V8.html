@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="profile">
+
+   </div> 
+</body>
+<script>
+    const element = document.getElementById('profile')
+    const xhr = new XMLHttpRequest();
+    const URL = 'https://api.github.com/users/nitesh-chaudhary8740'
+    xhr.open('GET',URL);//(method,url of endpoint)requesting data to API
+    
+    xhr.onreadystatechange = function(){ //this object takes a function which tracks all states
+        console.log(xhr.readyState)//see current states
+        if(xhr.readyState===4){
+            const data = JSON.parse(this.responseText);
+            console.log(data.login)
+            element.innerHTML=`<img src=${data.avatar_url}>`
+        }
+    }
+    xhr.send()
+
+</script>
+</html>
