@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="orange">orange</button>
+  <button id="green">green</button>
+</body>
+<script>
+  function init() {
+  let name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms a closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+function colorChange(color){ //when this function will execute it will return a handler with its lexical scope
+  return function(){//every function defintion stored in memory with its surrounding(lexical scope)
+    //so every closure functions has reference of lexical variables and funciton 
+    document.body.style.backgroundColor=color
+  }
+}
+document.getElementById('orange').onclick = colorChange('orange')
+document.getElementById('green').onclick = colorChange('green')
+</script>
+</html>
