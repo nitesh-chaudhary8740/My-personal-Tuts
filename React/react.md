@@ -1,0 +1,1 @@
+## React Components: React components are javascripts function which retruns JSX
