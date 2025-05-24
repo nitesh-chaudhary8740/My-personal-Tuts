@@ -4,4 +4,5 @@ var userName:string = 'Nitesh';
 var age:number= 25;
 console.log(`hello ${userName}`)
 console.log(`age: ${age}`)
+//npm tsc and --watch
 

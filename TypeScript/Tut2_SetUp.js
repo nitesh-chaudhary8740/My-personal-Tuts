@@ -4,3 +4,4 @@ var userName = 'Nitesh';
 var age = 25;
 console.log("hello ".concat(userName));
 console.log("age: ".concat(age));
+//npm tsc and --watch
