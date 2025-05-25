@@ -1,3 +1,4 @@
+"use strict";
 /** Points to be covered
  * 1. Apply Number datatype
  * 2. Redeclare issue
@@ -10,18 +11,18 @@
 //declaration syntax: variableDefKeywords(let,var,const) var_name:data-type = value
 var num1 = 10;
 var num1 = 20; // var keyword's variables can be redeclared
-var num2 = 40;
-var num3 = "28";
+let num2 = 40;
+let num3 = "28";
 // let num2:number = 30; //let keyword's variables can't be redeclared
-var result = num1 + num2 + num3; //result implicitily will be converted into string
+let result = num1 + num2 + num3; //result implicitily will be converted into string
 // let result1: number = num1 + num2 + num3; //it will cause error here in TS result1 is explicitly defined as number
-var result1 = num1 + num2;
+let result1 = num1 + num2;
 console.log(result);
 console.log(result1);
 //oct hexa binary prefix
-var oct = 7;
+var oct = 0o0007;
 var hexa = 0xffff;
-var bin = 42;
+var bin = 0b0101010;
 console.log(oct + 10);
 console.log(hexa + 10);
 console.log(bin + 10);
