@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Local Image Bytes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #byteOutput {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            max-height: 400px;
+            overflow-y: auto;
+            word-break: break-all; /* Important for long byte strings */
+            font-family: monospace; /* For better readability of hex values */
+            font-size: 0.9em;
+        }
+        #imagePreview {
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+            border: 1px dashed #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Read Local Image File Bytes</h1>
+
+    <p>
+        <label for="imageUpload">Select an image file:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+    </p>
+
+    <h2>Image Preview:</h2>
+    <img id="imagePreview" src="" alt="Image Preview">
+
+    <h2>Raw Bytes (Hexadecimal):</h2>
+    <pre id="byteOutput">No file selected yet.</pre>
+
+   
+</body>
+<script>
+const imageUpload = document.getElementById('imageUpload');
+const imagePreview = document.getElementById('imagePreview');
+const byteOutput = document.getElementById('byteOutput');
+
+imageUpload.addEventListener('change', handleImageUpload);
+
+function handleImageUpload(event) {
+    const file = event.target.files[0]; // Get the first selected file
+
+    if (!file) {
+        byteOutput.textContent = 'No file selected.';
+        imagePreview.src = '';
+        return;
+    }
+
+    // Check if it's an image (optional, but good practice)
+    if (!file.type.startsWith('image/')) {
+        byteOutput.textContent = 'Please select an image file.';
+        imagePreview.src = '';
+        return;
+    }
+
+    // Display image preview
+    const readerForPreview = new FileReader();
+    readerForPreview.onload = function(e) {
+        imagePreview.src = e.target.result; // Data URL for preview
+    };
+    readerForPreview.readAsDataURL(file); // Read as Data URL for image src
+
+    // Read the file as an ArrayBuffer to get its raw bytes
+    const readerForBytes = new FileReader();
+
+    readerForBytes.onloadend = function(e) {
+        if (e.target.readyState === FileReader.DONE) {
+            const arrayBuffer = e.target.result; // This is the ArrayBuffer
+            
+            // Create a Uint8Array view to access individual bytes
+            const uint8Array = new Uint8Array(arrayBuffer);
+
+            // Convert each byte to its hexadecimal string representation
+            let byteString = '';
+            for (let i = 0; i < uint8Array.length; i++) {
+                const byte = uint8Array[i];
+                // Convert to hex, pad with leading zero if necessary
+                const hex = byte.toString(16).padStart(2, '0');
+                byteString +='0x' +hex + ', '; // Add a space for readability
+                
+                // Optional: Add a newline every X bytes for better formatting
+                if ((i + 1) % 32 === 0) { // Every 32 bytes
+                    byteString += '\n';
+                }
+            }
+
+            byteOutput.textContent = byteString.trim(); // Display the string
+        }
+    };
+
+    // Start reading the file as an ArrayBuffer
+    readerForBytes.readAsArrayBuffer(file);
+}
+</script>
+</html>

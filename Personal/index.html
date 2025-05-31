@@ -1,15 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+<style>
+    body{
+    
+        width: 100vh;
+    }
+    .cont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vh;
+        border: 2px solid;
+    }
+    #imgCont {
+        /* border: 2px solid green; */
+        /* width: 100vh; */
+        display: flex;
+        flex-direction: column;
+   
+        background-color: white;
+        align-items: center;
+        /* margin: auto; */
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.5px;
+        /* box-sizing: border-box; */
+    }
+    #imgCont div{
+        display: flex;
+        gap: 1vh;
+        /* width: 100%; */
+    }
+
+
+    .clips {
+        border: 2px solid black;
+        height: 20vh;
+        width: 20vh;
+       
+    }
+    .active{
+    
+    position: absolute;
+    background-color: white;
+    /* top: 50%;
+    left: 30%; */
+    transform: translate(-50%, -50%);
+    transform: scale(2.5);
+    transition: transform 2s ease-out, top 2s ease-in-out, left 2s ease-in-out;
+    }
+   .activeBorderNone{
+    border: none;
+   }
+   #dynamic-typing{
+      
+        position: absolute;
+        letter-spacing: 0.5px;
+        word-spacing: 2px;
+        color: red;
+        top: 10%;
+        left: 50%;
+        border: none;
+        width: 100vw;
+  
+   }
+</style>
+
+
 <body>
-    <a href="https://drive.google.com/file/d/1stoo0iBq1933Pntkc0fPr-PtFxgb-GjU/view?usp=sharing">img</a>
-    <img src="https://drive.google.com/uc?export=view&id=1stoo0iBq1933Pntkc0fPr-PtFxgb-GjU" alt="My Logo">
+    <div class="cont">
+<div id="imgCont">
+        <h1>Click and Find Food of Kokta</h1>
+        <div>
+            <img class="clips" id="clip1"
+                src="https://png.pngtree.com/element_our/png/20180930/food-icon-design-vector-png_120564.jpg" alt="">
+            <img class="clips" id="clip2"
+                src="https://png.pngtree.com/element_our/png/20180930/food-icon-design-vector-png_120564.jpg" alt="">
+        </div>
+
+
+    </div>
+    </div>
+    
+    <!-- <a href="https://ibb.co/gNQtfnR"></a> -->
 </body>
 <script>
+    let clickAccumulator = 0;
+    const img1 = new Image();
+    img1.src = "https://i.ibb.co/6zGDTdW/img1.png";//khatarnak
+    const img2 = new Image();
+    img2.src="https://i.ibb.co/qFxbhWTH/IMG20230831175801-Photoroom.png";
+    const clipImgSrc = "https://png.pngtree.com/element_our/png/20180930/food-icon-design-vector-png_120564.jpg"
+    let activeElement = null;
+    const clips = document.querySelectorAll('.clips')
+    function createElementForMsg(myMsg){
+        const msg = myMsg;
+        const msgElement = document.createElement('h1');
+        msgElement.innerHTML = `<span id="content"></span><span id="typing-pipe">|</span>`
+        msgElement.setAttribute('id','dynamic-typing')
+        let timeAccumulatorForPipeBlinking = 1;
+        document.body.appendChild(msgElement)
+       const pipe = document.getElementById('typing-pipe')
+       const msgContent =document.getElementById('content')
+  
+     const blinkInterVal = setInterval(() => {
+         if(timeAccumulatorForPipeBlinking%2==0){
+            pipe.style.display = 'none'
+        }
+        else{
+            pipe.style.display = 'inline'
+        }
+        timeAccumulatorForPipeBlinking++;
+     }, 300);
+        let indexAcc = 0;
+        async function dynamicTypingEffect() {
+         const typeText = setInterval(() => {
+              if(indexAcc<msg.length){
+                        msgContent.textContent+=msg[indexAcc]
+                        indexAcc++;
+                    }
+                    else{
+                        console.log(typeText)
+                            clearInterval(typeText)
+                            clearInterval(blinkInterVal)
+                            console.log(blinkInterVal)
+                    }
+            }, 100);
+        
+        }
+        dynamicTypingEffect()
+    }
 
+
+
+
+    document.onclick = ((e)=>{//reset activeELement props after click out of that element(anywhere in DOM except active element)
+        if(activeElement?.classList.contains('active') && activeElement!==e.target){//agat target same nhi hai active element ke
+            activeElement.classList.remove('active')//active element se (.active) class ki props remove
+            activeElement.classList.remove('activeBorderNone')//border ki props remove
+            activeElement.src = clipImgSrc;//img ka src reset
+            activeElement= null;//aur active element ke holder variable of null(no more active variable)
+        }
+    })
+    clips.forEach(element => {//applying the EL to all clickable image ('.clips')
+        element.addEventListener('click',(event)=>{
+            event.stopPropagation()
+        if(!activeElement){//if activemElement is null
+            element.classList.add('active')//a new class will be appended in list of classes of element
+            activeElement = element;
+        }
+        else{
+            activeElement.classList.remove('active');//if active ele notNull then first remove active class attributes
+            activeElement.src = clipImgSrc;//and out clip Img src
+            element.classList.add('active');//yaha clicked element mein class apply
+            //pahle wale(previous) activeELement variable ke element ko remove kar new element add
+            activeElement = element  
+        }
+        element.addEventListener('transitionend',(e)=>{//transion ke baad image src change active element ka
+            if(e.propertyName==='transform' && element.classList.contains('active') &&clickAccumulator<1){//jab transform prop ka transition complete ho jaye tab
+                element.src = img2.src;//ush active element mein hidden img apply
+                element.classList.add('activeBorderNone') //aur ush image ka border:none kare wali class bhi apply
+                createElementForMsg("PYSCH!! THIS IS WRONG FOOD")
+                clickAccumulator++;
+
+            }
+            else{
+                document.getElementById('dynamic-typing').remove()
+                element.src = img1.src;
+                element.classList.add('activeBorderNone') //aur ush image ka border:none kare wali class bhi apply 
+                 createElementForMsg("OoooooHHHHHH!")
+                clickAccumulator++;     
+            }
+        })
+ 
+    })
+
+    });
+   
+
+    // Creates an img element in memmory, not yet in DOM,
+    //  its preload the img from source when src assigned
+    // unlike , using createElement and setAttribute and then append,
+    // here downloading and rendering start when img element appended to dom,but
+    //new Image() constructor start loading img just after assinging the src property value (url)
 </script>
+
 </html>
