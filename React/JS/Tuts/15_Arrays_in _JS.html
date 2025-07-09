@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+    <script>
+        let marks_of_class11 =[ 45, 96, 36, 78, 45, null, false, "Not Present"];
+        let cont_arr = [14, marks_of_class11];
+        console.log(marks_of_class11)
+        console.log(marks_of_class11[0]);
+        console.log(marks_of_class11[1]);
+        console.log(marks_of_class11[7]);
+        console.log(marks_of_class11[6]);
+        console.log(marks_of_class11[5]);
+        console.log(marks_of_class11[4]);
+        console.log(marks_of_class11[8]);//Exceed the lenght will return undefined element of array\
+        console.log("Length: ", marks_of_class11.length);
+        marks_of_class11[9]=85; //adding new element in array
+        marks_of_class11[0]=92; //changing value of existing index of array
+        //!!Arrays are muttable in JavaScript
+        //!!Array is object in JS not a primitive data type
+        console.log(typeof marks_of_class11)
+        console.log(marks_of_class11)
+        console.log(cont_arr[1]);
+        console.log(cont_arr[1][2]);
+        for(let i of cont_arr){
+            console.log("Element: ", i);
+        }
+        for(let i=0; i<cont_arr.length; i++){
+            console.log("Element: "+i+  " is: "+cont_arr[i]);
+        }
+
+
+    </script>
+</body>
+</html>

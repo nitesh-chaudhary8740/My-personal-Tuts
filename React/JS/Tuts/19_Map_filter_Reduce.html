@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Filter Reduce</title>
+</head>
+<body>
+    <script>
+        //MAP() method
+
+        let arr = [45,5,21,15,32];
+        console.log(arr);
+        //These are higher order methods
+        //map()
+       let newArr= arr.map((value,i,arr)=>{//@param(value,index,array)
+            console.log("MAP: "+value,i,arr);
+            document.writeln("MAP_VALUE: ",i,value);
+            return value+2;
+        })
+        console.log("old_Array ",arr);
+        console.log("New", newArr);
+        /*
+        forEach method just traverse each element of array,
+        but map() method returns each element of array and
+        create new array.
+        both are same but foreach don't return new array
+        */
+        
+        //FILTER method
+
+        let arr2 = [54,4,66,12,39,5,74,30,15,10,98];
+        let newArr2 = arr2.filter((f)=>{
+            return f>20; /*
+            it will traverse each element of array, 
+            and it will return the element, whose true for condition
+            */
+
+        })
+        console.log(arr2);
+        console.log(newArr2);
+
+        //REDUCE method
+
+        let arr3 = [1,2,6,7,5,4,8];
+        let newArr3 = arr3.reduce((para1,para2) =>{ //predefined function
+            return para1+para2;
+            /* 
+            first it will take @param 0 and 1 then
+            given opertation will be performed
+            after that them result and next index will be parameter
+            and so on
+            i.e: 1+2=3 => 3+6 => 9+7=16 => 16 + 5 =>21 + 4 =>25 +8 =>33 will be output
+             */
+           
+        })
+        console.log(arr3);
+        console.log(newArr3);
+
+        //creating a function then passing to the reduce method
+
+        const red_func = (p1,p2)=>{
+            return p1+p2;
+            
+        }
+        let newReducedValue = arr3.reduce(red_func);
+        console.log("value: ",newReducedValue);
+   
+      
+    </script>
+</body>
+</html>

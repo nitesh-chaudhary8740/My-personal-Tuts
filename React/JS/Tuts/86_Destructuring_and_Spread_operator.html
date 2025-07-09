@@ -1,0 +1,46 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure Assignment and Spread Operator</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = [1,2,3,4,5];
+    // let[a,b,c,...rest]=arr; //this is destructuring
+    // console.log(a,b,c)//a=1,b=2,c=3;
+    // console.log(rest)//rest elements will be added as array elements
+    let[a, ,...rest]=arr; 
+    console.log(a)//a=1,2 has ignored and from 3 to last element will be added to rest array;
+    console.log(rest)//rest elements will be added as array elements
+    // object Destructuring
+    let {x, y} ={x:1,y:2}
+    console.log(x,y)
+
+    
+    //spread Syntax
+    // let arr1 = ["a","b","c","d"];
+     let arr1 = [10,20,30,40];
+    //convert this array into object
+    let obj1 = { ...arr1};
+    console.log(obj1);//{0: 'a', 1: 'b', 2: 'c', 3: 'd'} //index will become keys
+    let func = (n1,n2,n3)=>{
+            return n1+n2+n3;
+    }
+console.log(func(...arr1))//it taken 3 arguments from array rest ignored
+let obj2 = {
+    name: "nik",
+    company: "XYZ",
+    address: "Add1"
+}
+// console.log({...obj2, name:"kent", company:"ABC"});//changes the values
+console.log({ name:"kent", company:"ABC",...obj2});//no change
+
+</script>
+</html>

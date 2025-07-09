@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossy Blue Crystal Candy Effect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e6f7ff; /* Very light blue background for context */
+        }
+
+        .messenger-container {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: #e0e0e0;
+        }
+
+        .chat-area {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #e5ddd5; /* Classic light chat background */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message-bubble {
+            max-width: 75%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+
+        /* --- THE GLOSSY BLUE CRYSTAL CANDY EFFECT --- */
+        .message-bubble.sent {
+            align-self: flex-end; /* Align to the right for sent messages */
+            color: #fff; /* White text for contrast on blue */
+            /* Main blue gradient for crystal depth */
+            background: linear-gradient(
+                to bottom,
+                #6CB2ED 0%,      /* Slightly less icy blue at the top for better text visibility */
+                #40B0EF 50%,     /* Bright, vibrant blue in the middle */
+                #007ACC 100%     /* Deep, rich blue at the bottom */
+            );
+            /* Subtle outer shadow for lift, and strong top inset highlight for crystal edge */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), /* Soft outer shadow */
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4); /* Reduced opacity for top inset highlight */
+            border: 1px solid #007ACC; /* Matching border with darker blue */
+        }
+
+        /* Prominent, wide, and soft white highlight for crystal shine */
+        .message-bubble.sent::before {
+            content: '';
+            position: absolute;
+            top: 2px; /* Slightly adjust position for candy look */
+            left: 5%;
+            width: 90%;
+            height: 25%; /* Slightly reduced highlight height */
+            border-radius: 18px / 9px; /* Wider and more prominent curved highlight */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%); /* Reduced starting opacity */
+            filter: blur(3px); /* Slightly less blur for a bit more definition */
+            z-index: 1;
+            opacity: 0.8; /* Reduced overall opacity for softness */
+        }
+
+        /* --- GLOSSY GREY/BLUE FOR RECEIVED (similar to before) --- */
+        .message-bubble.received {
+            align-self: flex-start;
+            color: #333;
+            background: linear-gradient(
+                to bottom,
+                #F8F8F8 0%,
+                #E0E0E0 50%,
+                #D1D1D1 100%
+            );
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid #D1D1D1;
+        }
+
+        .message-bubble.received::before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 10%;
+            width: 80%;
+            height: 20%;
+            border-radius: 10px / 5px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+            filter: blur(2px);
+            z-index: 1;
+        }
+
+        .input-area {
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ccc;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-area input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            background-color: white;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+            outline: none;
+        }
+        .input-area button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .input-area button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="messenger-container">
+        <div class="chat-area">
+            <div class="message-bubble received">
+                This is a regular message for contrast.
+            </div>
+            <div class="message-bubble sent">
+                Check out this new blue candy effect!
+            </div>
+            <div class="message-bubble received">
+                Wow, it really does look like a blue crystal!
+            </div>
+            <div class="message-bubble sent">
+                It's all about the right blue gradient and refined highlights.
+            </div>
+            <div class="message-bubble received">
+                So shiny and smooth! Love the depth.
+            </div>
+            <div class="message-bubble sent">
+                Just like a delicious piece of candy!
+            </div>
+            <div class="message-bubble received">
+                You've nailed it, darling!
+            </div>
+            <div class="message-bubble sent">
+                Glad you think so! ✨
+            </div>
+        </div>
+        <div class="input-area">
+            <input type="text" placeholder="Send a sweet message...">
+            <button>Send</button>
+        </div>
+    </div>
+
+</body>
+</html>

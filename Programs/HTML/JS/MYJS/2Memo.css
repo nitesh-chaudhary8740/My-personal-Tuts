@@ -1,0 +1,93 @@
+#addNewContainer {
+    position: absolute;
+    border: 2px solid;
+    background-color: transparent;
+    width: 50vh;
+
+    top:20vh;
+    left: 80vh;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    gap: 2vh;
+}
+@media only screen and (max-width:500px){
+#addNewContainer {
+
+    left: 0vh;
+
+ 
+}
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#container {
+    border: 2px solid green;
+    padding: 1vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content:space-around; */
+    /* align-items:self-start; */
+    justify-content: center;
+    
+    gap: 1em;
+}
+
+.memo {
+
+    background-color: aqua;
+    border: 2px solid red;
+    height: 10em;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    /* align-items: self-start; */
+}
+
+#blankDiv {
+    /* background-color: aqua; */
+    border: 2px solid red;
+    height: 10em;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#plus {
+    color: green;
+    border: 2px dashed;
+    padding: 2vh;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 100%;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+#btnCont {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titleinput {
+    /* border: none; */
+    padding-bottom: 1vh;
+    /* border-bottom: 2px solid; */
+}
+
+#textinput {
+    min-height: 10vh;
+    max-height: none;
+}

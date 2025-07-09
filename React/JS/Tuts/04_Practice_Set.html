@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set</title>
+</head>
+<body>
+    <Script>
+        //****Q.1 Add string varible to a number and prints its value*********
+
+        let a = "Nik";
+        let b= 5;
+        console.log(a + b);//concatenation of string
+
+        //****Q.2 Print the typeof a+b from Q.1 *********
+        console.log( typeof a + b);// o/p: string5
+        console.log( typeof (a + b));// o/p: string
+
+
+
+        //*****Q.3 assign string and number to object variable******
+        const obj={
+            name:"NIK", //key can be writtn inside double qutoes (" ")or not choice is up to us
+            age:24,
+            isStudent: true
+        }
+        // obj="nik";
+        //no string can be stored
+        // obj=544;
+        //not a number either
+
+        //now lets add new key value to the object
+        obj['newdata']="This is newly added!";//here (' ') is must to be use other wise variable should be declared.
+        let another="Another Key";
+        obj[another]="Value of another key";
+        console.log(obj)
+        obj['name']="NITESH";//value of 'name' key is changes
+        console.log(obj)
+        // !!IMPORTANT: we can add new keys: value in object while it is const
+        //so that's because const is telling that reference of object("obj") is contant not the variables or key value (instance) inside of that object ... means address of object is constant not the data of object, keys can be added and its value can be changed. 
+
+
+        //Object reference in const so we can't assign that another object to that reference , it doesn't matter its values are changed.
+        //Ex.
+        // obj={}; it will throw error
+
+        //*****Q.4 create a dictionary for few words
+        const dict = {
+            a:"apple",
+            b:"bat",
+            c:"cat"
+        }
+        console.log(dict['a']);
+        //another way to access key is
+        console.log(dict.b);
+
+    </Script>
+</body>
+</html>

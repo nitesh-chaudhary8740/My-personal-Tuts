@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking the DOM</title>
+</head>
+<script>
+    console.log(document.body);
+    // this script has no idea about <body> element existence beacuse html parsing is top to bottom.
+    // and this script is running before loading the body tag
+    // so thats why script must be written after body tag so all elements get parse or loaded before script execution
+</script>
+<body>
+
+    <script>
+       /*
+       !!Watch tree representation of DOM in Web
+        There ae three types of nodes in DOM tree:
+        1. Text nodes : text node is basic element or leaf of the tree.
+        2. Element Node : tags and child tags.0333b i
+        3. Comment Node
+        */
+       //Watch video again #31
+       //Browser html auto corrections
+       document.html;
+       document.documentElement;//whole <html></html> tag
+       document.body;
+       document.head;
+       document.title;
+       console.log(document.title)
+       document.title='New title';
+       console.log(document.title)
+    </script>
+</body>
+</html>

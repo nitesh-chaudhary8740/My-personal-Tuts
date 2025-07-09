@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisit Arrow Function</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const sayHello = name => console.log("Hello "+name); //no curly braket for single line 
+    //no parenthesis for single parameter
+    sayHello("nik");
+  /*  const x = {
+        name: "nik",
+        age: "24",
+        exp: "100",
+        func: function(){
+            console.log(`Name: ${this.name}\nThe role is: ${this.age}`);// 'this' keyword is reffering to the current object(x)
+        }
+    }
+    x.func();*/
+    const x = {
+        name: "nik",
+        age: "24",
+        exp: "100",
+        func: function(){
+            setTimeout(function() {
+                console.log(this)//now'this' keyword refers to the window object(when there is a closure function)
+
+                //'this' keyword in signle function in an object -refers to same object
+                //'this' keyword in closure function which is declared using 'function keyword' in object - refers to the global object(window object);
+                //'this' keyword inside the event - refers to the element which has received the event
+                console.log(`Name: ${this.name}\nThe role is: ${this.age}`);
+            }, 3000);
+        }
+    }
+    x.func()
+    const y = {
+        name: "nik",
+        age: "24",
+        exp: "100",
+        func: function(){
+            console.log(this)//current object
+            //so let assing this(object) to a varible
+            let that = this; //old technique
+            setTimeout(function() {
+                console.log(this);//window object
+                console.log(`Name: ${that.name}\nThe role is: ${that.age}`);
+            }, 3000);
+        }
+    }
+    y.func();
+    //now mordern way by using arrow function
+    const z = {
+        name: "nik",
+        age: "24",
+        exp: "100",
+        func: function(){
+        
+            setTimeout(()=> {//arrow function have lexical this, which they take from thier parent function environment
+                console.log(this);//now 'this' will refer current object
+                console.log(`Name in arrow: ${this.name}\nThe role is (in arrow): ${this.age}`);
+            }, 3000);
+        }
+    }
+    z.func();
+</script>
+</html>

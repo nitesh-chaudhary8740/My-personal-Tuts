@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise_chaining.then() calls</title>
+</head>
+<body>
+    <div id="testElement">
+        test element
+       </div> 
+</body>
+<script>
+    /*
+let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("Resolve in 2 seconds");
+        resolve(28);
+    }, 2000);
+})
+
+p1.then(result =>{
+    console.log("p1 then() passed resolve value is : ",result)
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+        resolve("p2 resolved value");
+        console.log(p1,p2)
+        }, 2000);
+        
+    })
+    return p2; 
+    //if there's no return promise in then() block, then next block of then () associate with implicitliy automatic
+    //to new Promise(res,rej) otherwise to returned promise
+}).then(result =>{ //ek then() ke baad dusre then() ka matlab woh hone ke baad ye karo
+    console.log("Done with value: ", result)
+    return 2; //immideiate create new promise with resolve(2)
+
+}).then(result=> {console.log(result)}).catch(err =>{
+    console.log("err ",err)
+})*/
+
+
+
+const load = (url) =>{
+
+    return new Promise((resolve, reject) => {
+    let script = document.createElement("script");
+    script.src = url;
+    document.body.appendChild(script);
+    script.onload = () =>{
+        // resolve(0);
+        setTimeout(() => {
+            resolve(`successfully added! ${url}`);
+        }, 5000);
+    
+    }
+    script.onerror = ()=>{
+        // reject(1);
+        reject(`not loaded ${url}`)
+    }
+    })
+
+}
+let p = load("./sample.js");
+p.then(val =>{
+    console.log(val)
+    return load("./sample2.js")
+}).catch(err =>{
+    console.log(err)
+}).then(vale =>{
+    console.log(vale)
+}).catch(err =>{
+    console.log(err)
+})
+</script>
+</html>

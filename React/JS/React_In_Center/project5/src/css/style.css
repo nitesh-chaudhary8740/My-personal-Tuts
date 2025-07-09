@@ -1,0 +1,169 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color:rgba(255, 255, 255, 0.83);
+}
+/* Navbar css starts here */
+.navContainer{
+    display: flex;
+    justify-content:space-between;
+    /* align-items: center; */
+    background-color: rgba(0,120,199,255);
+    color: white;
+    padding-top: 1.5vh;
+    /* flex-direction: row; */
+}
+.navItems{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    padding: 1vh;
+    /* border: 2px solid blue; */
+}
+.dashStatusNav{
+    display: flex;
+    border: 1.5px solid rgb(185, 181, 181) ;
+    justify-content:space-between;
+    background-color: white;
+    padding: 2vh;
+}
+.edit_dash_btn{
+    padding: 1vh;
+    color: white;
+    background-color: rgba(0,120,199,255);
+    font-weight: bold;
+}
+.dash_statusItems, .right_dash p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
+
+/* navbar css ends here */
+
+
+
+/* Mainbody css starts here */
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    /* background-color: aqua; */
+    padding: 2vh;
+}
+.bodyContent{
+    /* border: 3px solid black; */
+    width: 151vh;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+}
+
+.r1{ /* first row */
+    display: flex;
+    border: 1.5px solid rgb(185, 181, 181) ;
+    gap: 2vh;
+    padding: 1vh;
+    background-color: rgba(221, 230, 239, 0.873);
+}
+.dashImg{
+    height: 30vh;
+    width: 30vh;
+}
+.r1c2{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 120vh;
+    gap: 1vh;
+    /* border: 2px solid yellow; */
+    padding:  0 2vh;
+
+}
+/*first row end*/
+/* second row*/
+.row2{
+    /* border: 2px solid tomato; */
+    display: flex;
+    gap: 2vh;
+   padding: 1vh;
+  
+}
+.row2_columns{ /*  second row first column*/
+    border: 1.5px solid rgb(185, 181, 181) ;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 1vh;
+    height: 50vh;
+    width: 75vh;
+    box-sizing: border-box;
+    /* width: inherit; */
+    /* justify-content: center; */
+}
+.firstrow{ /*first-row of 2nd row columns*/
+    /* border: 2px solid cyan; */
+    display: flex;
+    border-bottom: 2px solid rgb(185, 181, 181);
+    justify-content: space-between;
+    
+}
+.info {
+    color: white;
+    font-size: 3.5vh;
+    background-color: rgb(104, 101, 101);
+    border-radius: 50%;
+    height: 5vh;
+    width: 5vh;
+    padding-top: 1.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.secondrow{/*second-row of 2nd row columns*/
+    display: flex;
+    justify-content: space-between;
+}
+.btn1{ /* inside second row*/
+    /* background-color: none; */
+    padding: 1vh 1vh ;
+    border: 2px solid rgb(185, 181, 181) ;
+   
+    width: inherit;
+    height: fit-content;
+    color: rgb(13,110,253);
+    font-weight: bold;
+}
+.secondRow_text {
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+.secondRow_text p{
+    /* border: 2px solid; */
+    margin: 0%;
+}
+ion-icon {
+    /* color: blue; */
+    color: rgb(0, 64, 255);
+    /* color: green; */
+    /* color: cyan; */
+    font-size:25px;
+    /* padding: ; */
+  }
+ .right_side_Nav{
+    display: flex;
+    gap: 4vh;
+  }

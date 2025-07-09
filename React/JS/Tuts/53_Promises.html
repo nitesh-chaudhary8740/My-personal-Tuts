@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+     Promise: A promise is a promise of code execution the code will either execute or fails. but in both cases the 
+     situation will notified.
+     */
+
+   /* 
+   Syntax: let promise = new Promise(function(resolve,reject){
+        //code
+    })
+        resolve()=> if job is finish successfully;
+        reject()=> if failed
+    */
+   let p = new Promise((res,rej)=>{//passing resolve() and reject() functions reference on the Promise() constructor
+    alert("This is promis "+typeof(res)+" and "+typeof(rej))
+            res("this is resolve") //?I think any value can be passed in these function
+            rej("this is reject") //?I think any value can be passed in these function
+            /*
+            promise has two properties state(intial pending then <fullfilled or not>) and result (passed on argument)
+            */
+   })
+
+console.log(p);
+
+
+//Note Page: 5!!Imp
+</script>
+</html>

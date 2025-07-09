@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects</title>
+</head>
+<body>
+    
+</body>
+<script>
+       
+    class Railway {
+      passengerName="";
+        age=0;
+
+        submit (){
+            console.log("This is submitted\nPassenger Details are\n"+"name: "+this.passengerName+" Age:"+this.age)
+        }
+        cancel(){
+                console.log(pass1+" cancelled tickets")
+        }
+        fill(givename){
+            this.passengerName=givename;
+        }
+
+    }
+
+    // class Railway {
+    //  passengerName;
+    //     age;
+
+    //     submit (){
+    //         alert("This is submitted\n passenger Details are\n"+"name: ")
+    //     }
+    //     cancel(){
+    //             alert(pass1+" cancelled tickets")
+    //     }
+
+    // }
+ 
+    let pass1 = new Railway();
+    let pass2 = new Railway();
+    pass1.submit()
+    pass2.submit()
+    
+    pass1.passengerName="pass1";
+    pass2.passengerName="pass2";
+    pass1.fill("pass123");
+    pass2.fill("pass2222");
+    pass1.age=24;
+    pass2.age=16;
+    pass1.submit()
+    pass2.submit()
+    pass2.cancel()
+
+
+</script>
+</html>

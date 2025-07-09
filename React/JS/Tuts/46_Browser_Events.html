@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Event</title>
+</head>
+<style>
+ 
+</style>
+<body>
+   <div class="container" id="cont1">
+    <button onclick="alert('hello')">click</button> 
+    <!-- alert("hello") javascript will run when the button will be clicked-->
+    <button onmouseenter="alert('onmouseenter')">click</button> 
+    <!-- mouse hovered over element then script will exe -->
+    
+   </div> 
+</body>
+<script>
+    //Event: a signal that something has happened
+    //All the dom nodes generate such signals
+
+    //Mouse events: click, right click(context-menu), hover, mouse out, mouse-down/up, mouse-move
+    //Keyboard events: key down(pressing)/key up(releasing)
+    //form element events: submit, focus etc.
+    //Document events: DOMContentLoaded
+
+
+    //Adding event without putting attribute in html element
+    const item = document.getElementById('cont1');
+    item.onclick = ( ) =>{
+            item.style.cursor="pointer"
+        item.style.background='green';
+    
+    }
+
+
+</script>
+</html>

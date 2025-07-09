@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+class First {
+  constructor(name) {
+    this.name = name;
+    console.log("First Class: " + this.name);
+  }
+  getNameFirstParent() {
+    return this.name;
+  }
+}
+
+class Second extends First {
+  constructor(name) {
+    super(name);
+    this.secondName = name;
+    console.log("Middle Class: " + name);
+    console.log("Middle Class after getting Name from its parent: " + super.getNameFirstParent());//here First1
+  }
+  getNameSecondParent() {
+    return this.secondName;
+  }
+}
+
+class Last extends Second {
+  constructor(name) {
+    super(name);
+    console.log("Last Class: " + name);
+    console.log("Last Class after getting name from its parent: " + this.getNameSecondParent()); // here second2
+  }
+  getNameSecondParent() {
+    return super.getNameSecondParent(); // Call the Second class's method
+  }
+}
+
+let f = new First("First1");
+let s = new Second("Second2");
+let l = new Last("Last3");
+</script>
+</html>

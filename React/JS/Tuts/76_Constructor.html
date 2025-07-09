@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Railway {
+        constructor (pName,pAge,tNo,) {//constructor is method which invoke each time when object is created
+            //constructor called by new keyword
+            //It can be use to initialize objects with some values of thier properties which are recommeded or must
+            this.pName=pName;//this.pName and pName(param) aree different variable
+            this.pAge=pAge;
+            this.tNo=tNo;
+            console.log("CONSTRUCTOR IS CALLED!")
+            
+        }
+        submit (){
+            console.log("This is submitted\nPassenger Details are\n"+"name: "+this.pName+" Age:"+this.pAge+" Train No.:"+this.tNo)
+        }
+        cancel(){
+                console.log(pass1+" cancelled tickets")
+                this.tNo="Not Any Train Booked!"
+        }
+      
+
+    }
+
+    let pass1 = new Railway("Nik",24,12126);
+    let pass2 = new Railway("Nehika",16,12126);
+    
+    pass1.submit()
+    pass2.submit()
+    pass2.cancel()
+    //WVA#77 for more
+</script>
+</html>

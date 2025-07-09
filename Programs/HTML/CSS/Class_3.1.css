@@ -1,0 +1,10 @@
+*{
+    margin: 15%;
+}
+span{
+    width: 100px;
+    border: 10px groove rgb(6, 105, 74);
+    text-align: center;
+    padding: 100px 100px;
+    margin: 100px 50px;
+}

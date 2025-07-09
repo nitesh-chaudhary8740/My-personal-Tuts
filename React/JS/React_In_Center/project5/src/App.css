@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20vh;
+gap: 10px;
+border: 2px groove;
+height: 50vh;
+width: 50vh;
+margin: 10px auto;
+
+}
+.calculate{
+  display: none;
+}

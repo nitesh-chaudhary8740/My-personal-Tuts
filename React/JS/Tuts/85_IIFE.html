@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediately Invoked Function Expression</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // IIFE is a JS function that execute as soon as it is defined
+ 
+   /* let a = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(200)
+        }, 3000);
+    });
+    //returned a fullfilled promise
+    (async()=>{ 
+        let b = await a;
+        console.log(b);
+        let c = await a;
+        console.log(c);
+        let d = await a;
+        console.log(d);
+        /*
+        output: 200
+        200
+        200 after 3 seconds 
+       1st- first await, wait for 3 second to fulfill the promise 
+        then print on console,
+        2nd - await a already have returned promise because a resolved value so the Promise function will not invoke again 
+        and  all output will display immediately
+        
+    })();*/
+    let a =()=>{
+        return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(200)
+        }, 3000);
+    })}
+
+    (async ()=>{
+        let b = await a(); 
+        console.log(b);
+        let c = await a();
+        console.log(c);
+        let d = await a();
+        console.log(d);
+    })();//IIFE(Prevent to pullute global space)
+</script>
+</html>

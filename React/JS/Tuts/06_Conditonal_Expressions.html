@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condtional Expressions</title>
+</head>
+<body>
+    <script>
+        let a=prompt("Enter number: "); //it take input from user or client side
+        //promt take input as string
+        console.log("Its: ",a);
+        console.log(typeof a);
+        // converting string into number typecasting
+        a = Number.parseInt(a);//parseInt funtion convert string into function.
+        console.log(typeof a);
+        if(a>1 && a<=18){
+            alert("Hey!");
+        }
+        else if(a>18 &&a<=25){
+            alert("That's Nice");
+        }
+        else if(a>25 && a<=30){
+            alert("Still Good");
+        }
+        else{
+            alert("Bye!");
+        }
+        //ternary operator
+        alert(a);
+        alert("Lets see "+(a>1?"borned":"unborned"));//here seprating with comma will not work.
+        
+    </script>
+</body>
+</html>

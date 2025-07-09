@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>.catch() .then()</title>
+</head>
+<body>
+    
+</body>
+<script>
+//Promise is promise of code execution
+let promise = new Promise((res,rej)=>{ // resolve and reject () Note:section p.g 6
+    console.log("Promise is pending")
+
+    setTimeout(() => {
+        console.log("Promise is fullfilled");
+        res("Promise0");//it will run 
+        rej(new Error("Promise is done, but still throwing error"))//ignored if resolve() executed
+        console.log("promise0: ",promise)
+    }, 5000);
+})
+
+let promise1 = new Promise((res,rej)=>{ //this execution will done in background asynchronysly
+    console.log("Promise is pending")
+
+    setTimeout(() => {
+        console.log("Promise is fullfilled");
+        // res(true,"promise1");//resolve return data as rseult if further use in then()
+        rej(new Error("Promise is done, but still throwing error"));
+        console.log("promise1: ",promise1)
+    }, 5000);
+})
+promise.then((result) =>{
+    console.log("then: ",result)
+});
+promise1.catch((err)=>{
+  console.log("catched: ",err)
+});
+//use in network calls if data receive or let this topic need to clearly deep
+
+//!!!!!!!!!!!!!!!!!Try Tut51 using promise 
+
+
+
+/* Meta
+let promise = new Promise((res, rej) => {
+  res("Hello");
+});
+
+promise
+  .then((result) => {
+    console.log("Result:", result); // Output: "Hello"
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });*/
+
+</script>
+</html>

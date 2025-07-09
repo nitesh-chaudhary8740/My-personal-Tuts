@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Object</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // properties of error object
+    // error.name
+    // error.message
+    // error.stack
+    try {
+        console.log(notdefined)
+    } catch (error) {
+        console.log(error," : ",typeof(error));//object type 
+        console.log(error.name) //name of error
+        console.log(error.message)//message along with error
+        console.log(error.stack)//return in which line of code error has occured
+    }
+    try {
+        console.log(refenece)
+        // throw new Error("This is custom error")//custom error
+        throw new ReferenceError("This is custom error")//custom error
+    } catch (error) {
+        console.log(error," : ",typeof(error));//object type 
+        console.log(error.name) //name of error
+        console.log(error.message)//message along with error
+        console.log(error.stack)//return in which line of code error has occured
+    }
+    try {
+      let age = prompt("ENter age:");
+      age = Number.parseInt(age);
+      if(age>100){
+        throw new ReferenceError("this is eroor")
+      }
+    } catch (error) {
+        console.log(error," : ",typeof(error));//object type 
+        console.log(error.name) //name of error
+        console.log(error.message)//message along with error
+        console.log(error.stack)//return in which line of code error has occured
+    }
+    console.log("code is running");
+    // !!! WATCH MDN OR OTHER REFERENCE FOR ERROR OBJECT TYPE OF ERRORS
+   
+</script>
+</html>

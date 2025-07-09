@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post request</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let promise = fetch(url,options)//options is object
+    //post request use to send data to server (other alternative methods are get)
+    //another use of post request that get request has limit to send data in url
+    //lets see how send object data in the server
+    //jsonplaceholder free fake rest API website
+    // !imp: to make post request need to add, pass the options args in fetch funtion
+    const createTodo = async (todo) =>{    
+    let options = {
+        method: 'POST',
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify([{//stringfy can be used at one object only so wrapping json in a array
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        },
+     todo]),
+    }
+    let promise = await fetch('https://jsonplaceholder.typicode.com/posts', options);//creating a resource from jsonplaceholder
+    let response = await promise.json(); //it also return a promise
+    return response;
+}
+//retrieve data throug id GET Request
+const getTodo = async (id) => {
+    let promise = await fetch('https://jsonplaceholder.typicode.com/posts/'+id); //getting resource from jsonplaceholder
+    let response = await promise.json();
+    return response;
+}
+const mainFunc = async() =>{
+    let postTodo = {
+            title: 'foo2',
+            body: 'bar2',
+            userId: 2,
+        }
+    let todoResponse = await createTodo (postTodo);
+    console.log(todoResponse);
+    // let getTodoResponse = await getTodo(500);//404 error get Http request not worked id 500 not existed 
+    let getTodoResponse = await getTodo(10);
+    console.log(getTodoResponse);
+};
+mainFunc();
+</script>
+
+</html>

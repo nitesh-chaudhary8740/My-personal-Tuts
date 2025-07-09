@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element only Navigation</title>
+</head>
+<style>
+    body{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+    ul{
+        margin: 0%;
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly; 
+        padding: 15px;
+    }
+    ul li{
+        
+        list-style: none;
+       
+        }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About Me</li>
+            <li>Hire Me</li>
+        </ul>
+    </nav>
+    <script>
+        const changeBgRed = () => {
+            document.body.firstElementChild.style.background = "red";
+        }
+        // changeBgRed();
+        let b = document.body;
+        console.log("first child of body is",b.firstChild);//return: Node //#text
+        console.log("first Elementchild of body is",b.firstElementChild);//return: Element//nav
+        console.log("previous sibling",b.previousElementSibling);//return: Element//nav
+        console.log("next sibling",b.nextElementSibling);//return: Element//nav
+
+        b.firstElementChild.style.background = "GrEen";
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id1" class="yellow text-dark">
+        <span>Hello I don't myself either</span>
+    </div>
+</body>
+<style>
+    
+    .yellow{
+        background-color: yellow;
+        color: white;
+    }
+    .red{
+        background-color: red;
+        color: white;
+    }
+    .text-dark{
+        color: black;
+    }
+</style>
+<script>
+    //create classes in element
+    
+    id1.className="red text-dark"; //class is changed 
+    /*
+    previous classes was yellow and text dark now
+    it become 'red' and 'text-dark'
+    using className property
+    item is selected by using id of element
+    */
+   document.writeln(id1.classList);
+   console.log(id1.classList);
+   console.log(id1.classList[0]);//length 2
+   //classList returns all classes of element as list
+
+   //#remove class from class list
+    id1.classList.remove('red'); //by className
+    // id1.classList.remove(id1.classList[0]);//by index
+
+    //# adding class on element's classList
+    id1.classList.add('red');
+
+
+    // # toggleing class in classList 
+    // if class exist it will be removed or if class don't exists it will added
+    id1.classList.toggle('red');
+    id1.classList.toggle('red');
+    id1.classList.toggle('red');
+    id1.classList.toggle('red');
+
+
+    //# check classList contains particular class
+
+    document.writeln(id1.classList.contains('red')) //return true if exists else false
+
+</script>
+</html>

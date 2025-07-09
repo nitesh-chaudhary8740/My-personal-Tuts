@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Practice Set</title>
+</head>
+<body>
+    <script>
+        //#PROBLEM-1
+        console.log("Nik\")")
+        //#PROBLEM-2
+        let sentence = 'The quick brown fox jumps over the lazy dog';
+        let word = 'Q';
+        console.log(sentence.includes(word));
+        //check given string literal is a sub string of that string
+        console.log(`The word '${word}" ${sentence.includes(word)?"is present":"is not present"} in the sentence`);
+
+        //same startWith and endWith
+
+        // #PROBLEM-3
+        let str = "Give me Rs 100000";
+        let len = ("Give me Rs ".length);
+        console.log(len);
+        let amount = Number.parseInt((str.slice("Give me Rs ".length)));
+        let amount1 = Number.parseInt((str.slice(11)));
+        console.log(amount);
+        console.log(amount1);
+        console.log(typeof amount);
+        console.log(typeof amount1);
+
+        // #PROBLEM-4
+        let name = "Nitesh";
+        name[3]="M";
+        console.log(name); //No change Strings are immutable afterall but JS not showing errors
+
+    </script>
+</body>
+</html>

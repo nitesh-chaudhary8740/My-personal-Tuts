@@ -1,0 +1,32 @@
+.container{
+    border: 2px dotted red;
+    height: 200px;
+    width: 200px;
+    animation: myanimation 2s ;
+    animation-iteration-count: infinite;
+    border-radius: 100%;
+    transition: linear;
+    
+}
+@keyframes myanimation {
+    0%{
+        border: 5px dotted transparent;
+        border-top: 10px dotted gray;
+        rotate: 30deg;
+    }
+    33%{
+        border: 5px dotted transparent;
+        border-right: 10px dotted gray;
+        rotate: 120deg;
+    }
+    66%{
+        border: 5px dotted transparent;
+        border-bottom: 10px dotted gray;
+        rotate: 270deg;
+    }
+    100%{
+        border: 5px dotted transparent;
+        border-left: 10px dotted gray;
+        rotate: -180deg;
+    }
+}

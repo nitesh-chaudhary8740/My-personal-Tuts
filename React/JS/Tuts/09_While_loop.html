@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While loop</title>
+</head>
+<body>
+    <script>
+        let num = prompt ("Enter Num");
+        num = Number.parseInt(num);
+        let i = 0;
+        while(i<num){
+            console.log(i);
+            i++;
+        }
+        //While loop minimum excute atleast one time
+        do {
+            console.log(i);
+            i++;
+        }
+        while(i<2*num)
+       /* difference between do-while-loop is it execute its block then check condition
+        on the other hand while loop check the condtion then execute its block*/
+    </script>
+</body>
+</html>

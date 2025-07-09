@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Parent and sibiling</title>
+</head>
+<!-- first child of body is div now-->
+<body><div>
+        <div class="class1">First</div>
+        <div class="class2">Second</div>
+    </div>
+    <script>
+        // $0.childNodes; //writing direct in browser(it returns selected elements from html through cursor or etc)
+        // $1.childNodes; 
+        //
+        //Node: node can be anything tags text or comment
+        //Element: but elements are only element 
+        alert(document.documentElement.parentNode);//document
+        alert(document.documentElement.parentElement);//null
+       let a = document.body.firstChild;//first child of the body is div
+       console.log(a.parentNode);
+       console.log(a.parentElement);
+       console.log(a.firstChild.nextSibling);//first child of body have two childs,and sibling of that div is second div
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11 Practice Set</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Problem-1 and 2
+    class Complex {
+        constructor(real,imagninary){
+            this.real=real;
+            this.imagninary=imagninary;
+        }
+        add(object){
+            this.real=this.real+object.real;//object=b(which has real and imagninary properties with value)
+            this.imagninary=this.imagninary+object.imagninary;
+        }
+    }
+    let a = new Complex(1,2);
+    let b = new Complex(3,4);
+    a.add(b);
+    console.log(a.real +"+i"+a.imagninary)
+
+    //Problem-3
+    class Human{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        walk(){
+            console.log("Human name "+this.name+" is walking");
+        }
+    }
+    class Student extends Human{
+        walk(){
+            console.log("Student name "+this.name+" is walking");//this working because parent class is also instance is now due to extends keyword
+        }
+    }
+    let o = new Student("nik",24);
+    o.walk()
+    console.log(o instanceof Human);
+    //WVA(Not need necesarily)
+
+</script>
+</html>

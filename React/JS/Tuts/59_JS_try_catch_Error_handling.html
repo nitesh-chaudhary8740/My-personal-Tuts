@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error handling in JS</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // try{
+    setTimeout(() => {
+       console.log("syn1...") 
+    }, 2000);
+
+    try{
+        setTimeout(() => {
+            // console.log(notdifined);//this will not work try block is working on synchronous code it don't have idea what will happend further
+            //so use try catch inside the asynchronous function
+            try {
+                console.log(notdifined);//now this will work
+            } catch (error) {
+                console.log(error)
+            }
+        }, 100);
+        console.log(fdk)//synchronysily break the execution of code after syn1...
+    }catch(err){
+        console.log("this error occured: ",err)
+    }
+    
+    setTimeout(() => {
+       console.log("syn2...") 
+       console.log(undefine) //async execution of code execution will not stop
+       console.log("another syn2...") //error occured so this line will not execute
+    }, 3000);
+    setTimeout(() => {
+       console.log("syn3...") 
+    }, 5000);
+    setTimeout(() => {
+       console.log("syn4...") 
+    }, 7000);
+    console.log(fdk) //all synchronous code will execute over this line 
+// }
+    // catch{
+
+    // }
+    // console.log()
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set-2</title>
+</head>
+<body>
+    <script>
+        //Problem No.1, Check age lies b/w 10 and 20
+
+        let age = prompt("Enter age: ");
+        console.log(typeof age);
+        age = Number.parseInt(age);
+        alert("Your age is between 10 and 20 ? "+(age>=10&&age<=20?"Yeah" : "Not"));
+        //this can be done using if else statement
+
+        switch (age) { 
+            case 5:
+                console.log("Between 1 to 5")
+                break;
+            case 6:
+                console.log("Between 6 to 10")
+                break;
+            case 54:
+                console.log("Between 11 to 15")
+                break;
+            case 25:
+                console.log("Between 16 to 25")
+                break;
+            default:
+                console.log("Default Age: ",age)
+        }
+        //Switch work on particular value not in conditons
+
+
+//Problem-3 , check given number is whether divisible from 2 and 3 or not
+        let x=prompt("Num: ");
+        x=Number.parseInt(x);
+        if(x%2==0 && x%3==0){
+            console.log("yeah")
+        }
+        else{
+            console.log("Its not")
+        }
+
+        //Other Practice problems are similar (for more watch video #8)
+    </script>
+</body>
+</html>

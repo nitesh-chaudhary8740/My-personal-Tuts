@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Prompt and confirm</title>
+</head>
+<body>
+    Hello world!
+    
+</body>
+<script>
+    console.log("console is working")
+    alert("Enter Number: ");
+    let a = prompt("Enter your value here: ","24"); //24 is default value in prompt
+
+    a = Number.parseInt(a);
+    alert("You typed a number type of : "+ (typeof a));
+    let write = confirm("Do you want to write value of  a"); 
+    //confirm return boolean true or false (true if ok , false if cancel)
+    if(write){
+        document.write(a);
+    }
+    else{
+        
+        document.write("Please confirm to write value");
+    }
+    //they pause execution thread of script
+    //We can't modify them, to design thier look
+    //!!check modail too
+</script>
+</html>

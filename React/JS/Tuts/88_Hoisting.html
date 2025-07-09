@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    func1();//this is working calling is before declarintion but it will feel like function is already declared
+    //this is  called hoisting
+    //but func() is not working let ask to our Meta AI..
+    let func = () =>{
+        console.log("Hoisting...");
+    }
+    func2();//not hoisted
+    var func2 = () =>{//fucntion expression are not hoisted
+        console.log("Hoisting...");
+    }
+    function func1(){//function is hoisted
+        console.log("Hoisting from func1...");
+    }a
+    console.log(a)
+    var a = 10;//this will be hoisted partially
+    console.log(a)
+    //declaration are hoisted, not initialization
+
+</script>
+</html>

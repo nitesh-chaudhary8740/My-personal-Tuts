@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let p = new Promise((resolve, reject) => {
+        console.log("Inside Promise");
+        setTimeout(() => {
+            resolve(0);
+        },2000);
+    })
+    //multiple promise handlers()
+    /*
+    p.then(result =>{
+        console.log("This is resolved with value: ", result);
+    })
+    p.then(result =>{
+        console.log("another handler: ", result);
+    })
+    p.then(result =>{
+        console.log("one more handler too: ", result);
+    }) */
+
+    let promise = new Promise((resolve, reject) => {
+        console.log("Inside new Promise");
+        setTimeout(() => {
+        resolve(0);
+        },2000);
+    });
+
+    promise.then(resolvedValue =>{
+        console.log("1 promise resolved value: ",resolvedValue)
+        return new Promise((resolve, reject) => {
+            return resolve(50)
+        }).then(resolvedValue =>{
+        console.log("new chained prommise: ",resolvedValue)
+        return 100;//directly return as resolved promise(matlab promise puri(fulfil) huyi aur resolve value 100)
+    }).then(returnValue =>{
+        console.log("is this working? ",returnValue) 
+    })
+    })
+    //trying to create chained promise code WVA though
+</script>
+</html>

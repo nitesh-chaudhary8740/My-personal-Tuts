@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //JavaScript objects have a special property called prototype that is either
+    let obj = {
+        name:"nik",
+        language:"javaScript",
+        run: () =>{//it
+            alert("inside the obj");
+        }
+    }
+    console.log(obj);
+
+    let $ = ()=>{};
+    let obj1 ={
+        run: () =>{
+            alert("this is run");
+        }
+    }
+    obj.__proto__ = obj1;//now obj1 is prototype of obj
+
+    obj.run()//first search in inside its object then protoypes
+
+    //obj1 is prototype of obj now create prototype of prototype
+    obj1.__proto__ ={
+        name1: "killua",
+        type:"prototype obj1 which is proto of obj"
+    }
+    console.log(obj.name1)//first inside its own keys not found then prototype obj1 not found then proto of prototype 
+
+</script>
+</html>

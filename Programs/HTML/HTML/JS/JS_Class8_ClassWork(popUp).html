@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="i4">
+       Name: <input type="text" id="i1"><br><br>
+       SurName: <input type="text" id="i2"><br><br>
+       <input type="submit" value="submit" id="i3">
+    </form>
+
+    <div id="popup">
+        
+    </div>
+    <script>
+    let sb = document.getElementById('i4');
+  
+    // document.writeln(name);
+       
+        sb.addEventListener("submit", (event) => {
+        event.preventDefault(); //don't let page reload
+        alert("This is alert");
+        const name = document.getElementById('i1').value;
+        const surName = document.getElementById('i2').value;
+        const popup = document.getElementById('popup');
+        popup.style.position="absolute";
+        popup.style.width="30%";
+        popup.style.height="25%";
+        popup.style.margin="auto";
+        popup.style.padding="50px";
+        popup.style.background="gray";
+
+        popup.innerHTML= "Hello Mr/Mrs<b id=\"bold\"> "+ name +" "+ surName +"</b>";
+        
+        const b= document.getElementById('bold');
+        b.style.color = 'red';
+        b.style.fontSize = '20px';
+     });
+
+
+    </script>
+</body>
+</html>

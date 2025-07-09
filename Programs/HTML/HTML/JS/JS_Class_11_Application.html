@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    #container{
+        
+        background-image: url("alessio-soggetti-uR6dIgDnt38-unsplash.jpg");
+        height: 100vh;
+        width: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+    #subcontainer{
+        /* background-color: burlywood; */
+        background-image: url("cute-cartoon-background-children.jpg");
+        background-attachment: fixed;
+        height: 450px;
+        width: 250px;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+    }
+</style>
+<body>
+    <div id="container" onmousemove="move(event)">
+        <div id="subcontainer">
+
+        </div>
+    </div>
+</body>
+<script>
+    function move(event){
+        let x = event.clientX;
+        let y = event.clientY;
+        let sub = document.getElementById("subcontainer");
+        sub.style.top=(y-10)+"px";
+        sub.style.left=(x-10)+"px";
+    }
+
+</script>
+</html>

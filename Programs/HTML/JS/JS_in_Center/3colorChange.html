@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #timer{
+            position: absolute;
+            color :white;
+            background-color: black;
+            /* opacity: 0.5; */
+            font-size: 50px;
+            bottom:220px;
+            left:550px ;
+            z-index: 1;
+        
+            
+        }
+        #t1{
+            height: 100vh;
+            width: 100%;
+        }
+        #selectedImg{
+            font-size: 100px;
+            position: absolute;
+            font-style: italic;
+            text-shadow: 10px;
+            bottom: 100px;
+            left: 220px;
+            background-color: aliceblue;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="t1">
+
+    </div>
+    <div id="selectedImg"></div>
+    <h1 id="timer">
+    </h1>
+</body>
+<script>
+    const div = document.getElementById("t1");
+    const timer =document.getElementById("timer");
+    const imgNumber = document.getElementById("selectedImg");
+    let imageArray = ["createtravel-tv-u4nB3cUejyk-unsplash.jpg","johannes-plenio-RwHv7LgeC7s-unsplash.jpg","manas-rb-LnETyPVrQKc-unsplash.jpg","photo-1465189684280-6a8fa9b19a7a.avif"];
+    div.style.height="100vh";
+    let loaded_image = 0;
+    let secTimer = 1;
+    function preloadImages(arrayOfImages) { 
+        arrayOfImages.forEach((eachImage) => {//iterating all elements of imageArray
+            let img = new Image();//
+        /*
+            
+        let img = new Image(); and document.createElement('img'); are equivalent in terms of creating an HTMLImageElement object.
+        Equivalent Creation:
+        JavaScript
+        // Method 1: Using Image constructor
+        let img1 = new Image();
+
+        // Method 2: Using createElement
+        let img2 = document.createElement('img');
+        */
+            img.src = eachImage;//src value 
+            img.onload=()=>{
+                // alert("images loaded")
+                if(loaded_image==imageArray.length-1){
+                    setInterval(showSecond,1000);
+                    setInterval(changeBackground,3000);
+                    
+                }
+                else if(loaded_image<imageArray.length){
+                    timer.innerText+= imageArray[loaded_image]+" loaded"
+                    loaded_image++;
+                   
+                }
+                
+            }
+        });
+        
+    }
+    let prevValue = 0;
+    function changeBackground(){
+        let choosenImg = parseInt(Math.random()*imageArray.length);
+        
+        div.style.backgroundImage=`url(${imageArray[choosenImg]})`
+        div.style.backgroundSize="cover";
+        div.style.backgroundRepeat="no-repeat";
+        if(prevValue!=choosenImg){
+            prevValue=choosenImg;
+            imgNumber.innerText=choosenImg+" is randomily selected!";
+        }
+        else{
+            imgNumber.innerText=choosenImg+" is again randomily selected!";
+        } 
+       
+    }
+   
+    function showSecond(){       
+            if(secTimer>3){
+                secTimer=1;
+            }
+             timer.innerText=`... ${secTimer}`
+             secTimer++;        
+        }
+
+    preloadImages(imageArray);//images will not added to DOM it will load on browsers only. because its not appended
+    
+
+  
+
+   
+    
+</script>
+</html>

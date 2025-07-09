@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //# setting timeOut
+    let a = setTimeout(() => {
+        alert("Timeout")
+    }, 5000) //5000 miliseconds = 5 seconds
+
+    console.log(a); //a stored timer id of timeout
+
+    //# clearing timeout
+    clearTimeout(a); //timeout a is cleared (stop the execution of setTimeout() funtion)
+
+
+
+    // # another way or use of setTimeout
+    //syntax: setTimeout(function,dely,args)
+
+
+    const sum = (a, b, c) => {
+        console.log("sum of numbers is: " + (a + b + c));
+    }
+    setTimeout(sum, 5000, 1, 2, 6); //the sum fuction will be called after 5 seconds
+
+
+
+    // # setInterval() 
+    //executes a function repeatedly at specified intervals (in milliseconds);
+    //syntax is similar as setTimeout();
+    // let i = 0;
+    // while(i<10){
+    //     setInterval(()=>{
+    //         alert(i); 
+    //     },1000)
+    //     i++;
+    // }
+    // this code is not working as I want while loop executed before setinterval delay
+
+    // let j = 0;
+    // while (j < 10) {
+    //     (function captureJ(currentJ) {
+    //         setInterval(() => {
+    //             alert(currentJ);
+    //         }, 5000);
+    //     })(j);
+    //     j++;
+    // }
+    /*
+        here IIFE (Immediately Invoked Function Expression). is used
+        (function functionName(parameters) {
+            // function body
+        })(arguments); 
+    */
+     
+    
+
+    // 
+    
+    
+let intervalId;
+(function() {
+  let n = 0;
+  const numInc = () => {
+    n++;
+    alert("Number is: " + n);
+    if (n === 10) {
+      clearInterval(intervalId);
+    }
+  }
+  intervalId = setInterval(numInc, 2000);
+})();
+    
+ let counter = 0;
+ while(counter<10){
+    alert("value is: " + counter);
+    counter++;
+ }
+//while-loop is executing before the setInterval part because of the 
+
+
+/*
+avaScript's synchronous and asynchronous nature
+Synchronous code: Executed immediately, one line after another.
+Asynchronous code: Executed later, after a delay or event.
+
+
+*/
+    // ways to control setInterval in Notebook JSQuery Section pg 3
+
+
+    //this topic was lil bit confusing mainly setInterval need to revise again later
+</script>
+
+</html>

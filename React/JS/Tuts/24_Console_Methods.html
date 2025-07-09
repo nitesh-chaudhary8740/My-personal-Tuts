@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console log Metods</title>
+</head>
+<body>
+    <script>
+        console.log(console);
+        //to show(list) methods of console objects
+        console.error("This is an error");
+        //to display errors error
+        console.assert(45>2);//assertaion means vow or claimig forcefully that is true or false
+        console.clear(); //to clear entire console
+        obj = {
+            a:1,
+            b:2,
+            c:3
+        }
+        console.table(obj); //to display object keys and value in tabular form(!!Important)
+        console.warn("This is warning");
+        console.info("This is info");
+        
+        console.time("timeLabel");//time count start from here
+        console.timeEnd("timeLabel");//ending the time through label and returing processed time b/w both statements
+        console.time("For_loop");
+        for(let i = 0; i<5; i++){
+            console.log("Checking...",i);
+        }
+        console.timeEnd("For_loop");
+    </script>
+</body>
+</html>

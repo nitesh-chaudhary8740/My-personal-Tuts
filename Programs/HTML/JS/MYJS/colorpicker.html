@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <style>
+    #color-picker {
+      border: 1px solid black;
+    }
+    #slider-container {
+      position: relative;
+    }
+    #slider-pointer {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: black;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="color-picker" width="400" height="200"></canvas>
+  <div id="slider-container">
+    <input type="range" id="slider" min="0" max="360" value="0">
+    <div id="slider-pointer"></div>
+  </div>
+  <script>
+    const canvas = document.getElementById('color-picker');
+const ctx = canvas.getContext('2d');
+const slider = document.getElementById('slider');
+const sliderPointer = document.getElementById('slider-pointer');
+
+let hue = 0;
+
+// Draw the color spectrum
+for (let i = 0; i <= 360; i++) {
+  const rgb = hsvToRgb(i, 100, 100);
+  ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 1)`;
+  ctx.fillRect(i * (canvas.width / 360), 0, 1, canvas.height);
+}
+
+// Update the slider pointer position
+slider.addEventListener('input', (e) => {
+  hue = parseInt(e.target.value);
+  sliderPointer.style.left = `${(hue / 360) * canvas.width}px`;
+  ctx.fillStyle = `rgba(${hsvToRgb(hue, 100, 100).r}, ${hsvToRgb(hue, 100, 100).g}, ${hsvToRgb(hue, 100, 100).b}, 1)`;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+});
+
+// HSV to RGB conversion function
+function hsvToRgb(h, s, v) {
+  const hi = Math.floor(h / 60);
+  const f = h / 60 - hi;
+  const p = v * (1 - s);
+  const q = v * (1 - f * s);
+  const t = v * (1 - (1 - f) * s);
+  switch (hi % 6) {
+    case 0:
+      return { r: v, g: t, b: p };
+    case 1:
+      return { r: q, g: v, b: p };
+    case 2:
+      return { r: p, g: v, b: t };
+    case 3:
+      return { r: p, g: q, b: v };
+    case 4:
+      return { r: t, g: p, b: v };
+    case 5:
+      return { r: v, g: p, b: q };
+  }
+}
+  </script>
+</body>
+</html>

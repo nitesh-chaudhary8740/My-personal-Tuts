@@ -1,0 +1,26 @@
+.container1{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    border: 2px solid red;
+    background-color: aqua;
+    z-index: 0;
+}
+.container2{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    border: 2px solid darkmagenta;
+    background-color:sandybrown;
+    z-index: -1;
+}
+.container3{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    border: 2px solid darkorange;
+    background-color: darkgreen;
+    z-index: -2
+    
+    1;
+}

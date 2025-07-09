@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+        }
+        fieldset{
+            border: 5px groove black;
+            padding: 10%;
+            background-color:rgb(40, 40, 44);
+            padding-top: 5%;
+            
+
+        }
+        h1{
+            text-align: center;
+            font-size: 7vh;
+            font-weight: bold;
+            animation-name: a1;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            margin-bottom: 5%;
+        }
+        @keyframes a1 {
+            0%{
+                color: blueviolet;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            10%{
+                color: rgb(58, 226, 43);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            20%{
+                color: darkcyan;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            30%{
+                color: darkgoldenrod;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            40%{
+                color: rgb(153, 51, 119);
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            50%{
+                color: red;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            60%{
+                color: yellow;
+                font-family: monospace;
+            }
+            70%{
+                color: aqua;
+                font-family: serif;
+            }
+            80%{
+                color: lawngreen;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            90%{
+                color: violet;
+                font-family: cursive;
+            }
+            100%{
+                color: blueviolet;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            
+        }
+
+        .field{
+            margin: 2%;
+            font-size: 2.5vh;
+            /* font-weight: bold; */
+        }
+        input{
+            width: 30vh;
+            height: 3.5vh;
+            border-radius: 2vh;
+            background-color: rgba(42, 235, 12, 0.468);
+            /* opacity: 0.5; */
+         
+        }
+        .field input::placeholder{
+            font-size: 2vh;
+            text-align: center;
+            font-family:cursive;
+            color: white;
+
+            /* font-weight: bold; */
+        }
+        .fieldcont{
+            background-color: gray;
+            border: 4px solid;
+            font-family:cursive;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 5vh;
+
+        }
+        .field button{
+            font-family:cursive;
+            border-radius: 20vh;
+            font-size: 2.8vh;
+            padding: 1vh 2vh;
+            /* position: relative;
+            left: 25vh; */
+            background-color: red;
+            color: white;
+        }
+        .field button:hover{
+            background-color: rgba(255, 0, 0, 0.563);
+            /* opacity: 0.5; */
+        
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>Registration Form</h1>
+        <div class="fieldcont">
+
+            <div class="field">
+                
+                <span> Enter Your Name:</span>
+                <input type="text" placeholder="Enter your Name">
+            </div>
+            <div class="field">
+                
+                <span> Enter Your Surname:</span>
+                <input type="text" placeholder="Enter Suryour Name">
+            </div>
+            <div class="field">
+                <button type="submit">Register</button>
+            </div>
+        </div>
+    </fieldset>
+</body>
+</html>

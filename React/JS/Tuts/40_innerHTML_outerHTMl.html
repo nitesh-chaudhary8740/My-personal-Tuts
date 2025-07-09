@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHTML</title>
+</head>
+<body>first node as text
+    <span id="first"><b>Hello!</b>This is span</span>
+</body>
+<script>
+console.log(document.getElementsByTagName('span')[0]);
+console.dir(document.getElementsByTagName('span')[0]);//display as an object
+
+/*
+tagName - only exist for Element nodes
+nodeName - defined for any node(text,comment element etc)
+*/
+console.log(document.body.firstChild.nodeName);
+console.dir(document.body.firstChild.nodeName);
+console.dir(document.body.firstChild.data);
+console.dir(document.body.firstChild.nodeValue);
+let x = document.getElementsByTagName('span')[0];
+console.log(x);
+console.dir(x);//display element as an object, along with elements all attributes and their values
+
+
+//innerHTML(valid for element nodes only)
+console.log(first.innerHTML);//get html
+first.innerHTML = "<i>this is italic</i>"; //set html
+console.log(first.innerHTML);//inner html changed(replaced) with new tag(!!?)
+
+//outerHTML
+console.log(first.outerHTML);
+first.outerHTML = "<div>Hey</div>";
+// selected tag changed, (span replaced with div)
+console.log("data of node: "+x.data)
+console.log("data of node: "+x.nodeName)
+console.log("data of node: "+x.nodeValue)
+//textContent
+console.log(document.body.textContent); //return element as text(here body and its content returned as text)
+//important learn more about that
+
+</script>
+</html>

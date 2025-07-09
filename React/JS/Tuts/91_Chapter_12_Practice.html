@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12 Practice</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Problem-1
+    const a = async(msg) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(msg)
+    }, 2000);
+  });
+};
+
+(async () => {
+//   await a("hello");//await paused here waiting for resolution or rejection
+//   console.log("Script execution continues...");
+//   await a("World");
+let text = await a("Hello");
+console.log(text);
+text = await a("World");
+console.log(text);
+console.log("Finished");
+})();
+
+// console.log("Script execution continues...");
+//Problem - WVA
+</script> 
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and BOM</title>
+    <style>
+        body{
+            background-color: rgb(185, 197, 10);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //Window objects: DOM, BOM, JS core
+        //Window is global object, which help to access browser window
+        window.console.log(window);
+        //DOM : Document Object Model
+        //JS convert each html da
+        //DOM: whole html page is an object and called document
+        console.log(window.document);
+        console.log(window.document.body);
+        document.body.style.background="rgb(185, 197, 10)";
+        //use that according user function
+
+        //BOM: Browser Object Model(HOST ENVIRONMENT)
+        //Represents addtional object provided by browser like location redirect to another URL etc
+        location.href="www.google.co.in";
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        //JSON: JavaScript Object Notation
+        let a = {
+            name:"Nitesh",
+            surname: "Chaudhary",
+            Address: {
+                HouseNo:308,
+                City:"Rewa",
+                State:"MP"
+            },
+            
+        }
+        let b = {
+            name:"Nitesh1",
+            surname: "Chaudhary1",
+            Address: {
+                HouseNo:2,
+                City:"Rewa",
+                State:"MP"
+            },
+            contact:7662690831,
+        }
+        let c ={
+               
+            contact:7662690831,
+            name:"Nitesh2",
+            surname: "Chaudhary2",
+            Address: {
+                HouseNo:2,
+                City:"Rewa2",
+                State:"MP2"
+            },
+            contact:7662690831,
+
+        }
+        console.log("name is:",a.name);
+        console.log("name is:",a.surname);
+        console.log("name is:",a.Address.City);
+        console.log("name is:",a.Address.HouseNo);
+        console.log("name is:",a.Address.State);
+        console.log("name is:",a.contact);
+        console.log("name is:",);
+        let arr = [a,b,c];
+        console.log(arr[0].name);
+
+
+        
+    </script>
+</body>
+</html>

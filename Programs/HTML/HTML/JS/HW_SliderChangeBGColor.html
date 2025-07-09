@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="rg" type="range" value="0" min="0" max="2" onchange="display_Value_Range()">
+    <div id="val"></div>
+</body>
+<script>
+    document.getElementById('rg')
+    function display_Value_Range(){
+        let value_of_Range= document.getElementById('rg').value;
+        let div_text = document.getElementById('val');
+        div_text.innerHTML=value_of_Range;
+        let  colors = ['yellow', 'green', 'blue'];
+        document.body.style.background=colors[value_of_Range];
+    }
+    display_Value_Range();
+    
+  
+</script>
+</html>

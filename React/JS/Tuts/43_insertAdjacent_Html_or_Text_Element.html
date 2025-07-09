@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1Id">This is div</div>
+</body>
+<script>
+div1Id.insertAdjacentHTML('beforebegin', '<div class="test"> this is beforebegin</div>');
+div1Id.insertAdjacentHTML('beforeend', '<div class="test"> this is beforeend</div>');
+div1Id.insertAdjacentHTML('afterbegin', '<div class="test"> this is afterbegin</div>');
+div1Id.insertAdjacentHTML('afterend', '<div class="test"> this is afterend</div>');
+//Node Removal
+div1Id.remove();//remove givenElement
+// insertAdjacentHTML beforebegin and afterend will work(coz they exist outside of element)
+</script>
+</html>

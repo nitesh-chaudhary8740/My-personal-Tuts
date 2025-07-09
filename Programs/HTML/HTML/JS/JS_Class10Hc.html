@@ -1,0 +1,31 @@
+<html>
+<body>
+<div>Start</div>
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+<div>End</div>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "JS_Class10.txt");
+  xhttp.send();
+}
+
+
+/*
+fetch("url") //url where file will be fetched
+.then("data-type: XML, HTML,JSON.TEXT")
+.then("data")
+
+*/
+</script>
+
+</body>
+</html>

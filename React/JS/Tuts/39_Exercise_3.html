@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise3 Tell me a joke</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+    let jokes = [
+        `What did one hat say to the other? You wait here — I'll go on ahead!`,
+
+        `Why don't the circus lions eat the clowns? Because they taste funny!`,
+
+        `What did the pirate say when he turned 80? "Aye matey."`,
+
+        `Why did the chicken cross the playground? To get to the other slide!`,
+
+        `Why did the actor fall through the floorboards? They were going through a stage!`,
+
+        `Why did a scarecrow win a Nobel prize? He was outstanding in his field!`,
+
+        `Why are peppers the best at archery? Because they habanero!`,
+
+        `What did the duck say after she bought chapstick? Put it on my bill!`,
+
+        `Why did an old man fall in a well? Because he couldn’t see that well!`,
+
+        `What do you call a fake noodle? An impasta!`,
+
+        `What did the three-legged dog say when he walked into a saloon? “I’m looking for the man who shot my paw!”`,
+
+        `How do you tell the difference between a bull and a cow? It is either one or the udder!`,
+
+        `What’s red and smells like blue paint? Red paint!`,
+
+        `What happened when Bluebeard fell overboard in the Red Sea? He got marooned!`,
+
+        `Why couldn't the skeleton go to school? His heart just wasn’t in it.`,
+
+        `What did the termite say when it walked into a bar? "Where's the bar tender?"`,
+
+        `Why can’t you send a duck to space? Because the bill would be astronomical!`,
+
+        `What does Jeff Bezos do before he goes to sleep? He puts his PJ-Amazon!`,
+
+        `What happened when the world's tongue-twister champion got arrested? They gave him a tough sentence!`,
+
+        `What did the mama cow say to the calf? It’s pasture bedtime!`,
+
+        `How does a vampire start a letter? Tomb it may concern!`,
+
+        `What do you call an illegally parked frog? Toad!`,
+
+        `What did one plate say to the other? Dinner is on me!`,
+
+        `Why do hummingbirds hum? Because they don’t know the words!`,
+
+        `What do sprinters eat before a race? Nothing. They fast!`,
+
+        `What kind of cat likes living in water? An octo-puss.`,
+
+        `Why did the dinosaur cross the road? Because chickens hadn't evolved yet.`,
+
+        `What do you call a cow that can't make milk? An udder failure — a milk dud.`,
+
+        `What do cats eat for breakfast? Mice Crispies!`,
+
+        `What do you call an elephant that doesn’t matter? An irrelephant!`,
+
+        `What do you get when you cross a rabbit with shellfish? An oyster bunny!`,
+
+        `Where do polar bears keep their money? In a snow bank!`,
+
+        `Why did the pony get sent to his room? He wouldn’t stop horsing around!`,
+
+        `What kind of dog does a magician have? A Labracadabrador!`,
+
+        `Where do cows go on Friday nights? They go to the moo-vies!`,
+
+        `Why couldn't the pony sing “Happy Birthday?”
+        Because she was just a little hoarse!`,
+
+        `How do you make an octopus laugh? With ten-tickles!`,
+
+        `How do you keep a bull from charging? Take away its credit card!`,
+
+        `How do you get a squirrel to like you? Act like a nut!`,
+
+        `What is the difference between a cat that took a nap on the Xerox machine and a cat that imitates everything you do? One is a cat copy, and the other is a copy cat.`,
+
+        `How do young bees get to school? They take the school buzz!`,
+
+        `What do frogs order at fast-food restaurants? French flies!`,
+
+        `What do you get from a pampered cow? Spoiled milk!`,
+
+        `What do you call an alligator who solves mysteries? An investigator!`,
+
+        `Why is a snake difficult to fool? You can’t pull its leg!`,
+
+        `What kind of socks do grizzlies wear? None, they have bear feet!`,
+
+        `What do you get when you cross a snail with a porcupine? A slowpoke!`,
+
+        `What did the dog say when it sat on sandpaper? "Ruff!"`,
+
+        `What's a cat's favorite dessert? Chocolate mouse!`,
+
+        `What fish only swims at night? Starfish!`]
+        
+        let choosenJoke = Math.floor(Math.random()*jokes.length);
+        document.writeln(`<div class="mainContainer"><h3 id="h3text">Dear Sir/Ma'am here's a joke for you!!</h3><div id ="jokeContainer"> ${jokes[choosenJoke]} </div></div>`);
+        document.querySelector(".mainContainer").style.height="100vh"
+        document.querySelector(".mainContainer").style.display="flex"
+        document.querySelector(".mainContainer").style.flexDirection="column"
+        document.querySelector(".mainContainer").style.alignItems="center";
+        document.querySelector(".mainContainer").style.alignItems="center";
+        document.querySelector(".mainContainer").style.justifyContent="center";
+        document.querySelector(".mainContainer").style.border="2px solid"
+        document.getElementById("h3text").style.color="red"
+        document.getElementById("jokeContainer").style.color="Green";
+        document.getElementById("jokeContainer").style.border="4px groove gray";
+        document.getElementById("jokeContainer").style.width="50vh";
+        document.getElementById("jokeContainer").style.padding="2vh";
+
+        // document.getElementById("jokeContainer").style.padding="10px 20px";
+
+</script>
+</html>

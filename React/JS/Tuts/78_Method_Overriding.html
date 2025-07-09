@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Employee{
+        logIn(){
+            console.log("Employee has logged In")
+        }
+        logOut(){
+            console.log("Employee has logged out")
+        }
+        requestsLeaves(noOfLeaves){
+            console.log(`Employee has requested ${noOfLeaves} leaves`)
+        }
+    }
+    class Programmer extends Employee{
+        requestCoffee(noOfCufs){
+            console.log(`Employee has requested ${noOfCufs} coffees`)
+        }
+        requestsLeaves(noOfLeaves){//parent method overriden(otherwise it will called parent method)
+            super.requestsLeaves(noOfLeaves);//super called parent instances(methods and properties)
+            console.log(`Employee(Programmer) has requested ${noOfLeaves+1} (1 extra) leaves`)
+        }
+    }
+    let e1 = new Employee();
+    let p1 =new Programmer();
+    e1.requestsLeaves(3);
+    p1.requestsLeaves(3);
+</script>
+</html>

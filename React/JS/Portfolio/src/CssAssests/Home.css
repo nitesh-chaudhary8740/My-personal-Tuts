@@ -1,0 +1,8 @@
+.homeImg{
+    background: url('../../public/blk5.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 40vh;
+    background-size: 100%;
+}

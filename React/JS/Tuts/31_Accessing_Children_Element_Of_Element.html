@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Children Element of Element</title>
+</head>
+<body> <!-- this space is also consider as child of body(first child #text not div) -->
+    <div>
+        <p>
+            Its children Element
+        </p>
+        <span>
+            sibiling of pargraph tag
+        </span>
+    </div>
+    <h1>heading</h1>
+    <h2>heading2</h2>
+    <h3>h3</h3>
+    <h4></h4>
+    <script>
+       
+        //Child Element: Tags or contents inside the continer tag, called children of that element
+        console.log(document.body.firstChild)//first
+        console.log(document.body.lastChild)//last
+        console.log(document.body.childNodes)//All
+        
+        //child node looks like array but its not array
+        let arr = Array.from(document.body.childNodes);// now its array
+        console.log(arr);
+        console.log(document.body.childNodes);
+        console.log(document.body.childNodes[1]);//comment node
+        // console.log(document.body.ELEMENT_NODE);
+        console.log(document.body.childNodes.length);// returns all nodes
+        //Must watch video again
+
+    </script>
+</body>
+</html>

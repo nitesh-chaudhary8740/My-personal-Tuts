@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Overriding</title>
+</head>
+<body>
+    
+</body>
+<script>
+ class Employee{
+    constructor(name){
+        console.log(name+" Employee class constructor")
+        
+    }
+        logIn(){
+            console.log("Employee has logged In")
+        }
+        logOut(){
+            console.log("Employee has logged out")
+        }
+        requestsLeaves(noOfLeaves){
+            console.log(`Employee has requested ${noOfLeaves} leaves`)
+        }
+    }
+    class Programmer extends Employee{
+        constructor(name){ //implicity super contructor called (this code added if child class dont have explict constructor)
+        //    console.log(this.name);//error first parent class constructor should called
+            super(name);//this is must to call super class constructor
+            console.log(name+" Inside Programmer class constructor");
+
+        }
+        requestCoffee(noOfCufs){
+            console.log(`Employee has requested ${noOfCufs} coffees`)
+        }
+        requestsLeaves(noOfLeaves){//parent method overriden(otherwise it will called parent method)
+            super.requestsLeaves(noOfLeaves);//super called parent instances(methods and properties)
+            console.log(`Employee(Programmer) has requested ${noOfLeaves+1} (1 extra) leaves`)
+        }
+    }
+    // let e1 = new Employee();
+    let p1 =new Programmer("JS Programmer");
+    // e1.requestsLeaves(3);
+    // p1.requestsLeaves(3);
+</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9 Callbacks, Promises, async await, try catch</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Problem 1 && 2 VN p.g. 8
+    const load = async(url) =>{
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = url;  
+            document.body.append(script);
+            script.onload = () => {
+                    resolve(url+" is added");
+            }
+        })
+    }
+    // first Method using then()
+
+  /*  
+  let returned_Promise = load("./sample2.js");
+    returned_Promise.then(result =>{
+            console.log(result)
+        })
+    */
+//    second method using await
+
+    const func = async () => {
+        console.log(new Date().getMilliseconds());
+        const fulfillment = await load("./sample2.js");//getting resolution value
+        console.log("fulfilment is: ", fulfillment)
+        console.log(new Date().getMilliseconds());//to check how much time taken to loadscript
+    }
+    // func(); 
+
+    //Problem-3
+    console.log("......Problem-3.............")
+    let rejected_Promise = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                    reject(new Error("This is error")) 
+                }, 3000);
+            })
+    } 
+    (async () => {
+        console.log("is this working")
+        try { 
+            returned_RejectedPromise = await rejected_Promise();
+        } catch (error) {
+            console.log("caught: ",error)
+        }
+
+    })();
+
+    //Problem - 4
+    let promise1 = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(10)
+                
+            }, 3000);
+        })
+    }
+    let promise2 = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(20)
+                
+            }, 1000);
+        })
+    }
+    let promise3 = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(30)
+                
+            }, 5000);
+        })
+    }
+    let run = async () => {
+        /* first way
+        console.time("r")//r is label
+        let p1 = await promise1(); //==> 3 sec(await pause the execution of current function and wait for this promise to fulfilled)
+        // console.log(p1);
+        let p2 = await promise2(); //==> 1 sec(then it will come here)
+        // console.log(p2);
+        let p3 = await promise3();// ==> 5 sec (then here at last) max time taking promise time is = 5 seconds, for all line by exe it taking 9 secs
+        console.log(p1,p2,p3); //total 9  seconds
+        console.timeEnd("r") //
+        */
+       //2nd way now await all promise together simultaneously(parallelily)
+
+       console.time("r")
+        let p1 =  promise1(); 
+        let p2 =  promise2(); 
+        let p3 =  promise3();
+       let allPromises = await Promise.all([p1,p2,p3]);//start executing togather
+       console.log(allPromises);
+        console.timeEnd("r") //
+        
+    }
+    run();
+//     Method 1 (sequential await) takes 9 seconds to execute, while Method 2 (parallel Promise.all()) takes only 5 seconds.
+// Method 2 is generally preferred when you have multiple independent Promises that can be executed simultaneously. However,
+//  if the Promises have dependencies or need to be executed in a specific order, Method 1 might be more suitable.
+</script>
+</html> 

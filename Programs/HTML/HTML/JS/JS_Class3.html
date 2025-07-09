@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+
+    <script>
+        let data = ["item1","item2","item3",54554,];
+        console.log(data);
+        data.push(125); //push() appeneding the data
+        console.log(data);
+        data.unshift("unshift");//adding element at the starting index
+        console.log(data);
+        data.shift("shifting first data"); 
+        console.log(data);
+        data.pop("shifting first data"); 
+        console.log(data);
+        let container = [...data,"local data"]; //...(spread operator) returns collections currently existing data
+        console.log(container);
+        container.fill("jstc",2,5); //fill the argumented data to the given range.
+        container[3]="dfj";
+        console.log(container);
+        container.map((x)=>{
+            
+            console.log("Element:"+x);
+        })
+        const func =(x)=>{
+            console.log(x)
+        }
+        let c = container.map(func);
+        console.log(c);
+
+    </script>
+</body>
+</html>

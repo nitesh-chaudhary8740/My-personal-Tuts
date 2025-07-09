@@ -1,0 +1,8 @@
+.item-container {
+    display: flex;
+    justify-content: space-around;
+}
+.items {
+    border: 2px solid;
+    padding: 1vh;
+}

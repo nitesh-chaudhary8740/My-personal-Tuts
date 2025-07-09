@@ -1,0 +1,20 @@
+.cont{
+    position:relative;
+    display:grid;
+    grid-template-columns: auto auto auto;
+    border: 2px solid;
+}
+.sub{
+
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   border: 2px solid green;
+   margin: 2%;
+   justify-items: center;
+   align-items: center;
+    width: 100px;
+}
+.sub:hover{
+    transform: scale(1.2,1.2);
+}

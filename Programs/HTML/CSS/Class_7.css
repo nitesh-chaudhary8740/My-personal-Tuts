@@ -1,0 +1,27 @@
+.container{
+    border: 2px solid blueviolet;
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+    /* overflow: hidden; */
+    cursor: auto;
+    cursor: all-scroll;
+    cursor: grab;
+    cursor: wait;
+    width: min(50%,300px);
+    font-size:clamp(2rem, 100vw,5rem);
+}
+.container1{
+    border: 2px solid blueviolet;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    /* overflow: hidden; */
+    cursor: auto;
+    cursor: all-scroll;
+    cursor: grab;
+    cursor: wait;
+    cursor: pointer;
+    /* width: min(50%,300px); */
+    margin-top: 20px;
+}

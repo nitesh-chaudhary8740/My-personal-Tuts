@@ -1,0 +1,12 @@
+document.getElementById("t1").style.fontSize = "50px"; 
+// let a = document.getElementById('t1').style;
+// a.color="crimson";
+// a.border="2px solid";
+// a.padding="30px";
+let b  = document.getElementById("t1");
+b.innerHTML="Nitesh";
+const para = document.createElement("p");
+const node = document.createTextNode("This is new");
+para.appendChild(node);
+const element = document.getElementById('t1');
+element.appendChild(para);

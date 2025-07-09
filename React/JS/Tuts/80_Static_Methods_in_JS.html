@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Animal{
+        constructor(name){
+            this.name=Animal.captalize(name);//static methods can be access only through class name
+            // this.name=(name);
+        }
+        walk () {//non static different for each object
+            console.log("Animal "+this.name+" is walking");
+        }
+        static captalize(n){//same method for each object Access through entire class
+            return n.charAt(0).toUpperCase() + n.substr(1, n.length);
+        }
+    }
+     j = new Animal("jack");
+     j.walk();
+    
+
+</script>
+</html>

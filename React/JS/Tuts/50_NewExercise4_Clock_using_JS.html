@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #clock{
+        height:400px;
+        width: 400px;
+        background-color: black;
+        color:white;
+        font-size: 50px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+</style>
+<body>
+    <div id="clock">  </div>
+    
+</body>
+<script>
+    
+    // console.log(h,m,s,d); 
+    const clo=document.getElementById('clock');
+
+    const showClock = () => {
+        let dObj = new Date(); //learn more about Date() class
+        let h = dObj.getHours();
+        let m = dObj.getMinutes()
+        let s = dObj.getSeconds();
+        let d = dObj.getDate();
+        clo.innerHTML =`${h.toString().padStart(2,"0")} : ${m} : ${s} :: ${d}`;
+    }
+    //toString() convert everything in string so not any kind of issue arrise like h+5=10 if h = 5;
+     //padStart(new length,"string arg")/padEnd()    
+     //i.e age = "5" padStart(2,"0") ==> 05 now string length is 2
+    setInterval(showClock,1000)
+    // while(true){
+    //     showClock();
+    // }
+
+   /* =====Meta AI=====
+     Why padStart(2, '0')?
+    To display times like 09:05:03 instead of 9:5:3.
+    Tips:
+    Use clearInterval to stop the interval when necessary.
+    Consider using a more precise timing method, like requestAnimationFrame, for smooth animations.
+    */
+
+
+    //#WVA51(watch video again)
+</script>
+</html>

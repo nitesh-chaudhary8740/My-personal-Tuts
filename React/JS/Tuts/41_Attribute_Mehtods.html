@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Methods</title>
+</head>
+<body>
+<div id="firstContainer" class="attribute" data-game="bko" data-player="me">
+    This is first container
+</div>
+    
+
+
+     <script>
+      let a =   firstContainer.getAttribute("class");//return the value of given attribute
+        console.log(a);
+
+
+        //#1. Now check wheter a element have a attribute or not through id
+        console.log(firstContainer.hasAttribute("class"));// o/p - true
+        console.log(firstContainer.hasAttribute("style"));// o/p - false ( it don't have style attribute at)
+        
+        //#2. Now setAttribute
+        firstContainer.setAttribute("style","color:green")//setting new 'style' attribute to given element
+        //try class attribute give different class name
+
+        //accessing element direct through the id is not gud practice
+        //so lets store it into a variable
+        let ele = document.getElementById('firstContainer');
+        // ele.setAttribute('hidden','true')
+
+
+        //#3. removeAtrribute
+        ele.removeAttribute('style');//'style' attribute is removed!
+
+        //
+        console.log(firstContainer.attributes);//retrun mapnode of attributes of given element
+        
+        
+        //#4. Now see how create customm attribue (data-).
+        console.log(firstContainer.dataset);//list of all custom attributes
+        console.log(firstContainer.dataset.game);//accessing specific specific attribute 
+        console.log(firstContainer.dataset.player);
+
+
+     </script>
+</body>
+</html> 7

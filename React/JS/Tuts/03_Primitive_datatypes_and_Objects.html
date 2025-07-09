@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primitive dataypes and Non-primitives datatypes(objects)</title>
+</head>
+<body>
+    <script>
+        let a = null;//object(null means nothing is given yet) //it also called null data-type
+        let b = 345;//number
+        let c = true;//boolean
+        let d = BigInt("46346565");//bigint
+        let e = "nik";//string
+        let f = Symbol("This is a symbol");//symbol
+        let g =  undefined;//undefined means there's no any kind of data is stored
+        let h;//By default (without initialization) variables data-type will be undefined.
+        console.log(a,b,c,d,e,f,g);
+        console.log(typeof a);// "type of yeild type of variable data-type"
+        console.log(typeof b);
+        console.log(typeof c);
+        console.log(typeof d);
+        console.log(typeof e);
+        console.log(typeof f);
+        console.log(typeof g);
+        console.log(typeof h);
+
+        //Non-Primitive (Object data-type)
+
+        //Objects are keyvalue pairs like dictionary(in python) Mapping(In JAVA) but in JS it is called "OBJECT"
+        let lang="JAVA";
+        const item = {
+            "Vinland":"Thorfinn",
+            "Name": "nik",
+            "Age" : 24,  
+            "Language":lang,
+            "Programmer":true,
+            "nik":undefined  
+           }
+           //left side are keys and right side are values KEY:VALUE;
+           console.log(item["Name"]);
+           console.log(item["Age"]);
+           console.log(item["Language"]);
+           console.log(item["Programmer"]);
+           console.log(item["nik"]);
+           console.log(item["nifdsfsk"]);//this is yield undifined coz of key is not defined
+    </script>
+</body>
+</html>

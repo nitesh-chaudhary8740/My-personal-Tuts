@@ -1,0 +1,13 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    color: red;
+}
+div:hover{
+    display: n;
+}
+div::before{
+    color: green;
+    content: "Our country is-";
+}

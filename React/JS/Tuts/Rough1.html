@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+ <script>
+  function repeat(n, callback) {
+  for (let i = 0; i < n; i++) {
+    callback(i);
+  }
+}
+
+repeat(3, (index) => {
+  console.log(`Hello, world! ${index}`);
+});
+ </script>
+</body>
+
+</html>

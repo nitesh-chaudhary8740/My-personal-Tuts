@@ -1,0 +1,19 @@
+.container{
+    background-color: aqua;
+    color: brown;
+    font-size: 3em;
+}
+@media screen and (width<800px) {
+    .container{
+        background-color: green;
+        color: yellow;
+        font-size: larger;
+    }
+}
+@media screen and (width<500px) {
+    .container{
+        background-color:darkorchid;
+        color: burlywood;
+        font-size: larger;
+    }
+}

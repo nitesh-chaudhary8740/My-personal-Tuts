@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Methods</title>
+</head>
+<body>
+    <script>
+        let num = [1,5,6,8];
+        let str = num.toString(); 
+        //1. toString() 
+        // converting entire array into a String
+        console.log(str);
+        let jn = num.join();//default roaster of array element
+        let jn1 = num.join("_");
+        //2 join(args)
+        // it will put the given argument between each element of array and make it a string
+        let jn2 = num.join("");//No space no comma
+        console.log(jn, typeof jn);
+        console.log(jn1, typeof jn1);
+        console.log(jn2, typeof jn2);
+        //3 pop()  
+        console.log(num.pop());//remove and return array element from its last index of the current lenght
+        console.log(num.pop());
+        let element=num.pop();
+        console.log(num);
+
+
+        //4. push(element)
+        console.log(num.push(89));//returns current lenght of array while adding new element in last index
+        console.log(num.push(99));
+        console.log(num);
+        // console.log(push(45));
+
+        //5. Shift()
+        console.log(num.shift()) //it remove elements 
+        console.log(num);
+
+        // 6. unshift()
+        
+        console.log(num.unshift(41));
+        //add new element in starting index
+        // 7. delete operator
+        delete num[0];
+        console.log(num,num.length);//index will reserve as empty element
+        //8. concat() join two arrays
+        let newarr =[1,2,3];
+        let contarr=num.concat(newarr);
+        num.unshift(5);//Unshift() just adding new element at first index
+        console.log(num);
+        console.log(contarr);
+       
+        //!!Search more method in web also learn how to deal with empty index
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<style>
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .btn{
+        display: none;
+    }
+    @media screen and (width<600px){
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+        .btn{
+        display: block;
+    }
+    }
+</style>
+<body>
+    <div class="btn">
+        <button >X</button>
+    </div>
+    <div class="container">
+        <div>Home</div>
+        <div>About</div>
+        <div>Contact Us</div>
+        <div>Gallery</div>
+        <div>Feedback</div>
+    </div>
+    <script>
+        function expand(){
+            $(".container").slideUp();
+        }
+        function collapse(){
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1" value="Nik">
+    <br>
+    <input type="text" id="t3" oninput="maggie()">
+    <br>
+    <label id="t2"></label>
+    
+</body>
+<script>
+    alert("name is:"+document.getElementById("t1").value)
+    //this statment will print data in alert(i.e: System.out.Println())
+    document.getElementById("t1").value="Nitesh"
+    function maggie(){
+        document.getElementById("t2").innerHTML=document.getElementById("t3").value
+    }
+</script>
+</html>

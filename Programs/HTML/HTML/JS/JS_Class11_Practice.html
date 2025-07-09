@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    #logo{
+        height: 5em;
+        width: 5em;
+    }
+    #container {
+        height: 100vh;
+        width: 100vh;
+        margin: auto;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #subcontainer {
+        background-color: rgb(19, 89, 180);
+        display: flex;
+        gap: 5em;
+        height: 30em;
+    }
+    #contentContainer {
+        background-color: rgb(19, 89, 180);
+        display: flex;
+        flex-direction: column;
+        gap: 2vh; 
+        align-items: center;
+    }
+
+    #studyaboard {
+        color: white;
+        font-size: 6vh;
+    }
+
+    #edu {
+        color: yellow;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+        letter-spacing: 4px;
+        font-size: 3vh;
+        font-weight: 450;
+    }
+
+    #mainImg {
+        height: 15em;
+        width: 7em;
+    }
+    #contries{
+        display: flex;
+        gap: 15px;
+        margin-left: 2em;
+       
+    }
+    .flags{
+        height: 10vh;
+        width: 10vh;
+    }
+    .country{
+        text-align: center;
+    }
+    #barcode{
+        margin-top:5em;
+        display: flex;
+        border: 2px solid;
+    }
+    #barcodetxt{
+        /* text-decoration: underline; */
+        transform: rotate(-90deg);
+        border-bottom: 2px solid;
+        padding: 0px;
+        color: yellow;
+        letter-spacing: 2px;
+    }
+    #barimg{
+        height: 4em;
+        width: 4em;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div id="container">
+            <div id="logo">
+                <img id="logo" src="" alt="">
+            </div>
+            <div id="subcontainer">
+                <div id="contentContainer">
+                    <div>
+                        <h1 id="studyaboard">STUDY ABOARD</h1>
+                    </div>
+                    <div> <span id="edu">WITH EDUNIRVANA</span></div>
+                    <div> <span id="trusted">BHOPAL'S TRUSTED BRAND</span></div>
+                    <div> 
+                        <div id="contries">
+                            <div>
+                                <div class="country">USA</div>
+                                <div><img class="flags" src="dsf" alt=""></div>
+                            </div>
+                            <div>
+                                <div class="country">GERMANY</div>
+                                <div><img class="flags" src="dsf" alt=""></div>
+                            </div>
+                            <div>
+                                <div class="country">UK</div>
+                                <div><img class="flags" src="dsf" alt=""></div>
+                            </div>
+                            <div>
+                                <div class="country">IRELAND</div>
+                                <div><img class="flags" src="dsf" alt=""></div>
+                            </div>
+                            <div>
+                                <div class="country">AUS</div>
+                                <div><img class="flags" src="dsf" alt=""></div>
+                            </div>
+                        </div>
+                </div>
+                    <div id="barcode"> 
+                        <div id="barcodetxt">LET'S CONNECT</div>
+        
+                        <img id="barimg" src="df" alt=""></div>
+                </div>
+                <div id="imgContainer">
+                    <img id="mainImg" src="main image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

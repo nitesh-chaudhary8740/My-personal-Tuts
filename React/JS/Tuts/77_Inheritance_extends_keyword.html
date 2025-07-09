@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Animal {
+        constructor(name,color){
+            this.name=name;
+            this.color=color;
+        }
+        run(){
+            console.log(this.name+" is running");
+        }
+        shout(){
+            console.log(this.name+" is shouting");
+        }
+    }
+    class Monkey extends Animal{
+        //if any class dont have any constructor, automatically default constructor is created, inside the class.
+        eatBanana(){
+            console.log(this.name+" is eating banana");
+        }
+    }
+    let dog = new Animal("Bunty","White");
+    let monkey = new Monkey("Chimpanzee","Black") 
+    /* "An explicit constructor requires the super() method to call the parent constructor.
+     If a constructor is defined explicitly in a child class,
+      it will not automatically call the parent class constructor."
+     */
+    monkey.eatBanana();//dog don't have property of eatbanana but child class Monkey inherit all properties of extended class
+    dog.shout();
+
+</script>
+</html>

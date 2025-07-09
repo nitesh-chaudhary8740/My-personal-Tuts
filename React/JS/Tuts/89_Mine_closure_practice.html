@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const y = () =>{
+    let a = 1;
+    // x(); //no hoisting with function expression
+    console.log("outer ",a)
+    const x = () =>{
+        let a = 2;
+        console.log("inner ",a)
+   
+}
+x();
+}
+// x()//error why(because x() is not defined in global environment)
+y();
+
+/*
+
+To invoke a closure function, you need to invoke its parent lexical environment (i.e., the outer function) first.
+This is because the closure function is defined within the scope of the outer function, and it relies on the outer function's lexical environment to access its variables and other properties.
+Think of it like a nested box:
+The outer function is the outer box.
+The closure function is the inner box, which is nested inside the outer box.
+To access the inner box (closure function), you need to open the outer box (invoke the outer function) first.
+Here's a simple example:
+JavaScript
+function outerFunction() {
+  let outerVariable = "I'm outer";
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+// To invoke the innerFunction (closure), we need to invoke the outerFunction first
+let closure = outerFunction();
+closure(); // Output: "I'm outer"
+*/
+</script>
+</html>

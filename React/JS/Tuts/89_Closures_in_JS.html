@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in JavaScript</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // message="Global Morning";
+    //  function hello1(){
+    //     let message="Morning";
+    //     { 
+    //         // message="Overriden value"//Morning value is overwritten
+    //         let  message="Good After Noon"
+    //         // message="Overriden value"//here, after Noon value is overwritten
+    //         console.log("Hello inner block Good1 "+message)
+    //     }
+    //     console.log("Hello outer block Good1 "+message)
+    //  }
+    //  hello1()
+    //  console.log("globa messagel"+message)
+    //  //search what is lexical enviroment
+    function hello2() {
+        let message = "Morning";
+
+        console.log("Hello outer block Good1 " + message)
+        let value1 = function inHello2() {
+            console.log("I'm Hello2 " + message)
+        }
+        return value1;//returning functin
+    }
+    value1 = hello2() //hellow return function stored in new func
+    value1();//run again
+    //  console.log("globa messagel"+message)
+    function inIt() {
+        var name = "Inside inIt";//this value is not going to be print
+        function displayName() {//closure function
+            console.log("Name of Func: " + name);
+        }
+        name = "nik";//
+        return displayName;//
+    }
+    let c = inIt();//when function returned it returned its lexical environment of closure function(variable references, outter scope)
+    c()
+
+    //VN p.g 14 closure and lexical Environemnt 
+    function retFunc() {
+
+        const x = () => {
+            let a = 1;
+            console.log("x: ", a)
+            const y = () => {
+                let a = 2;
+                console.log("y: ", a)
+                const z = () => {
+                    let a = 3;
+                    console.log("z: ", a)
+
+                }
+                z();
+            }
+            y();
+        }
+        return x;
+    }
+    //x ka lexical environment execute hoga fir x ke env mein y() toh woh bhi execute ho jayega and y() se lexical environment 
+    //mein z() called hai then z() run hoga
+    let a = retFunc()
+    a();
+</script>
+
+</html>

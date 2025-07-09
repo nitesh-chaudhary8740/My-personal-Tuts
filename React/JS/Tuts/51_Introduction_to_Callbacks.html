@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    
+    Asynchronous: Asynchronous programming or
+     statment is that excution of thread will be on given time.
+     example. setTimeOut() etc
+
+    Synchronous: Synchronou programming is line by line execution of code
+    from top to bottom.
+    example. variable assignment , expressions, loops, conditonals etc
+     
+     */
+
+
+    /*
+           ========Meta Notes========
+           Your notes are mostly accurate. Here's a review with some minor corrections and additional insights:
+    Asynchronous:
+    Definition: Asynchronous programming refers to the execution of code that doesn't block or wait for a specific operation to complete.
+    Example: setTimeout(), setInterval(), AJAX requests, Promises, Async/Await.
+    Key point: Asynchronous code allows other tasks to run concurrently, improving responsiveness and performance.
+    Synchronous:
+    Definition: Synchronous programming refers to the sequential execution of code, where each statement waits for the previous one to complete.
+    Examples: Variable assignments, expressions, loops, conditionals, function calls.
+    Key point: Synchronous code executes line-by-line, blocking other tasks until completion.
+
+    */
+
+    // CallBacks
+
+    function loadScript(url, callback) { //creating a function with two arguments url, callback which will be fucntion
+
+        var script = document.createElement("script"); // <script> element is created and stored in script var
+        script.src = url;//puting url value in src at
+        document.body.appendChild(script);//adding script tag with src="url" attribute at end of the body tag
+        script.onload = ()=> { //when the script will be loaded (onload is attribute, where function is assingned as value)
+            console.log("loaded with SRC: " + url);
+            callback(url,1);
+        }
+        script.onerror = ()=>{
+                callback(url,0);//0 for flag
+                
+        }
+    }
+
+    function theCallbackFucntion(nameOfSrc ,flag) {
+        if (flag==0){
+            alert("Script not loadded= " + nameOfSrc);
+            document.body.innerHTML += "<h1>Loading Not Complete!</h1>";
+        }
+        else{
+            document.body.innerHTML += "<h1>Loading Complete!</h1>";
+            alert("Callback executed!: src= " + nameOfSrc);
+        }
+   
+    }
+    loadScript("51_JS_for_loading.js", theCallbackFucntion);
+    /*
+    Why no parentheses after theCallbackFunction?:
+    In JavaScript, when passing a function as an argument to another function, you don't use parentheses (). This is because you're passing a reference to the function itself, not executing it immediately.
+    Passing a function reference vs. executing a function:
+    theCallbackFunction (no parentheses): Passes a reference to the function.
+    theCallbackFunction() (with parentheses): Executes the function immediately.
+    */
+
+
+</script>
+
+</html>

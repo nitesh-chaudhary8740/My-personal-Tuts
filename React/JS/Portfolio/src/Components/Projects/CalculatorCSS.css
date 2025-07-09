@@ -1,0 +1,73 @@
+#cont {
+    background-color: black;
+    display: flex;
+    width: 50vh;
+    height: 70vh;
+    /* padding: 15px; */
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 10px;
+    justify-content: center;
+    gap: 35px;
+}
+
+#calcScreen {
+    /* margin: 0;
+    color: white;
+    padding: 10px;
+    width: 50vh;
+    height: 20vh;
+    background-color: rgb(59, 63, 63);
+    border-bottom: solid 1px white;
+    font-size: 4vh; */
+    /* height: inherit; */
+    width: 50vh;
+    height: fit-content;
+    padding: 10px;
+    font-size: 4vh;
+    border-bottom: solid 1px white;
+    background-color: rgb(59, 63, 63);
+    color: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    text-align: left;
+    min-height: 20vh;
+    /* Initial minimum height */
+    max-height: none;
+    /* Remove max-height to allow dynamic growth */
+    letter-spacing: 2px;
+}
+
+#ansScreen {
+    padding: 10px;
+    width: 50vh;
+    min-height: 7vh;
+    height: fit-content;
+    max-height: none;
+    background-color: rgb(111, 116, 116);
+    border-bottom: solid 1px white;
+    font-size: 5vh;
+        /* box-sizing: border-box; */
+        /* height: inherit; */
+        font-weight:500;
+    letter-spacing: 2px;
+}
+
+.calcElement {
+    /* color: white; */
+    /* display: inline-block; */
+    margin: 0px;
+    padding: 5px;
+    font-size: 3.5vh;
+    height: 7vh;
+    width: 7vh;
+    /* margin: auto; */
+    text-align: center;
+    /* align-items: center; */
+    background-color: rgb(214, 158, 53);
+    border-radius: 100%;
+    cursor: pointer;
+
+}

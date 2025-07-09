@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches Closet Contains</title>
+</head>
+<body>
+    <div id="id1" class="cont">This is element1</div>
+    <div id="id2" class="cont">This is element2</div>
+    <div id="id3" class="cont">This is element3 <span id="spn1">span1</span></div>
+
+
+    <script>
+
+        //#1. matches()
+        // console.log(id1); // what the heck, although it is not gud practice(use getElementById instead)
+        console.log(id2);   //chrome is supporting, no idea other browser will also support so don't use that.
+        let id1 = document.getElementById("id1");
+        let class1 = document.querySelectorAll(".cont");
+        //now checking 
+        console.log(id1.matches(".class"));
+        console.log(id1.matches(".cont"));
+        console.log(id1.matches("#id2"));
+        console.log("class[0] mathches id 1: ",class1[0].matches("#id1"));
+        console.log("class[1] mathches id 1: ",class1[1].matches("#id1"));
+        console.log("class[0] mathches id 2: ",class1[0].matches("#id2"));
+        console.log("class[1] mathches id 2: ",class1[1].matches("#id2"));
+        //to check particular selector matches the same selecor of that element.
+
+
+        // #2. Closet
+        console.log(spn1.closest(".cont")); //directly using spn1 not gud practice, but this time okay
+        console.log(spn1.closest("#spn1"));
+        //checking closest element, starting from own id or class, then look for parent class,
+        //then parent of parent... and so on until its not match, if not find it will return null if found return that element
+
+
+        // #3. contains
+        //match and return true is descendant element exist or not, otherwise return false.
+        myId3 = document.getElementById("id3");
+        console.log("id3 contains spn1: ", myId3.contains(spn1));
+        console.log("spn1 contains spn1: ", spn1.contains(spn1));
+        console.log("spn1 contains id3: ", spn1.contains(id3));
+        
+
+ 
+
+    </script>
+</body>
+</html>

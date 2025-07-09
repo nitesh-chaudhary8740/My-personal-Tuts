@@ -1,0 +1,22 @@
+.container{
+display: flex;
+/* justify-content: space-between; */
+gap:2px;
+flex-wrap: wrap;
+/* justify-content: center; */
+}
+.sub{
+    border: 2px solid rebeccapurple;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub:hover{
+    background-color: brown;
+}
+body{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1)100%);
+}

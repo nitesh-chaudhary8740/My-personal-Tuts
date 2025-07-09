@@ -1,0 +1,35 @@
+.navContainer{
+    display: flex;
+    height:fit-content;
+    /* justify-content: space-between; */
+    }
+    /* .options{
+       
+    } */
+    .optionsContainer{
+      
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10vh;
+        border: 2px solid;
+        width: fit-content;
+        padding: 2vh;
+        align-items: center;
+        list-style: none;
+        /* height: fit-content; */
+       
+        
+    }
+    .options{
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+    }
+    .logoImg{
+        height: 10vh;
+        width: 10vh;
+        /* overflow: hidden; */
+        border: 2px solid;
+        margin-right: 2vh;
+    }
+    

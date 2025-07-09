@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+    <script>
+        let name = "Nitesh\"";
+        console.log(name.length);//length method returns length of that string
+        console.log(name.toUpperCase()); //this method make string literals into capital letters same also toLowerCase
+        console.log(name.toLowerCase()); 
+        console.log(name.slice(2,5)); //index 2 in included, but 5 isn't
+        console.log(name.slice(2)); //in single argument it will go from given starting index to last index of the string
+        console.log(name.replace("tesh\"","k")); // use to replace
+        mid_name="Kumar";
+        
+        let full_name = name.concat(mid_name+" Chaudhary")
+        //concat method use to concatenate the string 
+        console.log(full_name);
+        let t="        need trim      ";
+        //
+        console.log(t.trim()); //trim spaces of start and last
+
+        //Strings are immutable
+        for(let i=0; i<name.length;i++){
+            console.log(name[i]);
+        }
+        // or
+        for(let s of name){
+            console.log(s);
+        }
+
+        //!! check more methods on web google, MDN, or Meta
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffencre b/w let var const</title>
+</head>
+<body>
+        <script>
+            var a = 45;
+            var b = "Harry";
+            var c = null;
+            var d = undefined;
+            // var is block scoped keyword to declare variable
+            //Ex.
+            console.log(b);
+            {
+                var b="Nik";
+                console.log(b);
+            }
+            console.log(b);
+            //Now variable 'b' value changed globally, it happens due to 'var' keyword
+            
+            //In other hand let scope remains within block, it use to block scope keyword to declare variable
+            let x=5;
+            {
+                let x="dhkj";
+                console.log("IN THE SCOPE"+x);
+            }
+            console.log("GLOBALLY"+x);
+
+            // Variable which is created by using 'var' keyword can be redeclared
+            var redcalre=15;
+            var redcalre=50;
+            console.log(redcalre);
+            //But 'let' keyword don't let do that
+            let redclr=74;
+            console.log(redclr);
+            // let redclr=74; it will give error
+            redcalre="djb";// but it is not chainging its data type dynamically during execution.
+            console.log(redclr);
+            
+            const authror="NIK"; //this is constant
+            //in const initialize while declaration.
+        </script>
+</body>
+</html>

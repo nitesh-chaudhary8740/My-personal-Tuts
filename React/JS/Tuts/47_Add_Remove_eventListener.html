@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Remove EventListener</title>
+</head>
+<body>
+    <div>
+        <button id="btn">click</button>
+    </div>
+</body>
+<script>
+    /*
+    code_Start
+    let num = prompt("Enter the Number: ");
+    btn.addEventListener('click',function(e){
+        alert("Alert-1");
+    })
+    btn.addEventListener('click',function(e){
+        alert("Alert-2");
+    })
+    if (num=="2"){
+        btn.removeEventListener('click',function(e){
+            alert("Alert-1 Removed");
+        })
+    }
+        code_End
+        */
+
+
+    /*
+    on the above code I was trying to remove of the Event of alert-1 but inside if ()
+    the removeEventListener has different function not the same function reference of 
+    the event of ALert-1
+
+    because remove event and addevent have different funtions
+    so I have to store that fuction object reference in a variable
+
+    */
+   
+    let num = prompt("Enter the Number: ");
+   
+    let e1 =  function  (e){
+        // alert("Alert-1");
+        console.log(e);//very important event object must search of MetaAI or other ref.
+        console.log(e.target);//yeilds targeted element where in event is being occured
+        console.log(event.type, e.clientX ,e.clientY); //type of event, and X-Y cordinates where the element is clicked of brower window.
+    }
+
+    /*
+    Definition of event Object(e): when an event happens the browser creates an event object, 
+    puts details into it
+    and passes it as an argument to the handler.
+
+    elem.onclick = (event) => {
+                //......
+    }
+    */
+
+    let e2 = function(e){
+        alert("Alert-2");
+    }
+
+    //syntax => element.addEventListener('event',handler);
+    //syntax => element.removeEventListener('event',handler);
+    btn.addEventListener('click',e1);
+    btn.addEventListener('click',e2);
+    if (num=="2"){
+        btn.removeEventListener('click',e2)
+    }
+    
+    //Important video can be re-watch
+
+</script>
+</html>

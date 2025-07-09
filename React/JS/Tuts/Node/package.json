@@ -1,0 +1,14 @@
+{
+  "name": "node1",
+  "version": "1.0.0",
+  "description": "not yet",
+  "main": "95_NPM_and_NodeJS.js",
+  "scripts": {
+    "test": "okay"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pdf-creator-node": "^2.3.5"
+  }
+}

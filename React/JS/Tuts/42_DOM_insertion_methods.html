@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Methods</title>
+</head>
+<body>
+    <div class="container">
+        cont initial
+        <div id="ele1">First Element</div>
+        cont end
+    </div>
+</body>
+<script>
+    let cont = document.getElementsByTagName('div')[0];
+    // cont.innerHTML = '<h1>Hello</h1>';
+    /*
+    Old content(<div id="ele1">First Element</div>) is removed 
+    so commenting above line and using the >>  cont.innerHTML = cont.innerHTML+'<h1>Hello</h1>';(concated) prev content+new content
+      */
+    cont.innerHTML = cont.innerHTML+'<h1>Hello</h1>';
+    
+    let newEle = document.createElement('div');//step-1: Element is created
+    newEle.innerHTML = "<h2>this is h2</h2>";//step-2: data is inserted
+    document.body.appendChild(newEle);//step-3: element added to dom (The child element is added to the end of the parent's child list.)
+    cont.appendChild(newEle);
+    cont.prepend(newEle);//add element at first node
+    cont.append(newEle);//add element at last node
+    cont.before(newEle);//insert before node
+    // cont.after(newEle);//insert after node
+    let anotherEle = document.createElement('b')
+    anotherEle.textContent="Replaced H2 with b tag <br>"
+    newEle.replaceWith(anotherEle);
+    
+    // for(let i = 0; i<10; i++){
+    //     let ele = document.createElement('H3');
+    //     cont.appendChild(ele);
+    //     // cont.setAttribute('id',`id-${i}`)
+    //     ele.id=`id-${i}`;
+    //     let element = document.getElementById(`id-${i}`);
+    //     element.innerHTML=`This is element- ${i}`;
+    // }
+
+    //  alternatives approaches
+
+
+
+    Array.from({ length: 10 }, (_, i) => {
+    const ele = document.createElement('h3');
+    ele.id = `id-${i}`;
+    ele.innerHTML = `This is element- ${i}`;
+    cont.appendChild(ele);
+});
+
+</script>
+</html>

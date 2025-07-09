@@ -1,0 +1,19 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 34px);
+    grid-template-rows: repeat(3, 34px); /* Add grid-template-rows */
+    gap: -1px;
+    margin: 1%;
+  }
+  
+  .squares {
+      height: 34px;
+      width: 34px;
+     background: #fff; 
+    border: 1px solid #999;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    padding: 0;
+    text-align: center; 
+  }

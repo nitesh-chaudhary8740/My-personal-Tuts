@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 Practice Set</title>
+</head>
+<body>
+    <script>
+        //#PROBLEM - 1
+        let marks={
+            Killua:62,
+            Gon:57,
+            Chrollo:89,
+            Fietan:90
+        }
+        // Convert object to array of key-value pairs(for length)
+        const arr = Object.entries(marks);
+        console.log(arr.length);
+        console.log(arr);
+        for(let i=0;i<Object.keys(marks).length;i++){
+            console.log("The marks of "+Object.keys(marks)[i]+" are "+marks[Object.keys(marks)[i]])
+        } 
+
+
+
+            /*
+            //Difference between Object.key() and Object.entries()
+
+            Key differences
+                Return type: Object.keys() returns keys, Object.entries() returns key-value pairs.
+                Usage: Use Object.keys() for iterating over keys, Object.entries() for iterating over key-value pairs.
+            */
+                    /*Performance: Object.keys() is slightly faster.
+            Use cases
+                Object.keys()
+                Checking if a key exists.
+                Iterating over keys.
+                Creating a new object with modified keys.
+            Object.entries()
+                Iterating over key-value pairs.
+                Converting objects to arrays or maps.
+                Creating a new object with modified values.
+                            */
+
+        //this is plain code in place for for-in loop
+        console.log(Object.keys(marks)[1]);
+        for(let name in marks){
+            console.log("The Marks of "+ name +" is: "+marks[name])
+        }
+        //#PROBLEM-2
+        let corret_num=2;
+        let i;
+         while(i  != corret_num){
+            i = prompt("Enter the number");
+         }
+
+         //#PROBLEM-3
+         const mean=(a,b,c,d)=>{
+            return (a+b+c+d)/4;
+         }
+         console.log(mean(5,6,84,24));
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-2</title>
+</head>
+<body>
+    <script>
+
+        const choices = ["s", "w", "g"];
+
+function getComputerChoice() {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function determineWinner(userChoice, cpuChoice) {
+  if (userChoice === cpuChoice) {
+    return "Tie!";
+  }
+  
+  switch (userChoice) {
+    case "s":
+      return cpuChoice === "w" ? "You win!" : "CPU wins!";
+    case "w":
+      return cpuChoice === "g" ? "You win!" : "CPU wins!";
+    case "g":
+      return cpuChoice === "s" ? "You win!" : "CPU wins!";
+  }
+}
+
+// Example usage:
+const userChoice = "s";
+const cpuChoice = getComputerChoice();
+console.log(`CPU chose: ${cpuChoice}`);
+console.log(determineWinner(userChoice, cpuChoice));
+
+
+//Meta code ends
+        //Snake-Water-Gun Game
+        let user = prompt("Enter s,w, or g ");
+        let cpuInp = Math.floor(Math.random()*3);// 0 to 2 random numbers
+        let cpu = ["s", "w", "g"][cpuInp]; //[cpuInp] is for accesing the element
+    
+    /* Example:-
+        const choices = ["s", "w", "g"];
+        const cpuInp = 1;
+        let cpu = choices[cpuInp]; // cpu = "w" 
+    
+    */
+        console.log(cpu);
+    </script>
+</body>
+</html>

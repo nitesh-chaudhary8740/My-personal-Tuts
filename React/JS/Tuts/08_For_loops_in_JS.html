@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loops in JS</title>
+</head>
+<body>
+    <script>
+        for(let i=0; i<=2000;i++){
+            console.log(i);
+            // alert(i); lol don't do that
+        }
+        let obj={
+            Nik:63,
+            Nitesh:70,
+            Me:90,
+            Shivam:80
+        }
+        //for-in loop
+        console.log(obj['Nik']);
+        for(let x in obj){
+            console.log("Key: " + x + " Value: "+obj[x])//here x='key' so obj['key'] is equivalent to obj[x]
+        }
+        //for-of loop
+        //for-of loop work for iterative approach not for object data type
+        // for(let a of obj)(              //Error obj is not iterable, for-of work to iterate arrays
+        //     console.log(a)
+        // )
+        let str="This is String";
+        for(let a of str){
+            console.log(a);
+        }
+    </script>
+</body>
+</html>

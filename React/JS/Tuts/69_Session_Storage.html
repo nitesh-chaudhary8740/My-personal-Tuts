@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //session storage get less use as compare to local Storage
+    //it has different session for same page whenever page get refreshed, browser closed or page get opened in new tab session will end
+    //it has same method as localstorage
+    sessionStorage.setItem("3","vlae")
+    // #WVA#70
+    // StorageEvent
+    window.onstorage = ()=>{//storage eventListener /read this again
+        alert("changed")
+    }
+</script>
+</html>

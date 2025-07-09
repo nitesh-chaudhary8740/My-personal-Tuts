@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Copy to Clipboard</title>
+</head>
+<body>
+
+</body>
+<script>
+const obj = {
+  name: 'John',
+  traditionalFunc: function() {
+    console.log(this.name); // Output: John
+  },
+  arowFunc: ()=> {
+    console.log('arrow: ',this); // why window object not parent?
+  }
+};
+obj.arowFunc();
+obj.traditionalFunc();
+
+const standaloneFunc = function() {
+  const newObj = {
+    hello:'hello!',
+    func: function(){
+      console.log("inside function",this) //parent object in newObj
+    }
+  }
+  function closure(){
+    console.log('closure this',this)
+    newObj.func();
+  }
+  console.log('global function"',this); // Output: global object
+  closure();
+};
+
+standaloneFunc();
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    
+</body>
+<script>
+/*
+Any function can be asynch function, and await the promise inside that function
+*/
+
+/*async function func1() {
+    return 100;
+}
+func1().then(value =>{
+    console.log(value)
+})*/
+//An Async function always returns promise
+async function func2() {
+    let p1 =new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("P1 resolved value")
+    }, 2000);
+})
+
+let p2 =new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("P2 resolved value")
+    }, 4000);
+})
+// p1.then(alert)//resolved value get alerted
+// p2.then(alert)
+let p1Value = await p1;//wait until promise not get fulfilled and retrun some value(resolve, reject)
+let p2Value = await p2;//wait until promise returns resolve or reject value.
+//?await pause resolution
+return [p1Value,p2Value];
+};
+let p_Array = func2();
+console.log(p_Array);
+
+console.log("Resolution values are...")
+console.log(p_Array);
+console.log(p_Array[0]);//undefined
+console.log( typeof p_Array[1]);
+/*p_Array[0].then(value =>{ //error on cole
+    console.log(value);
+})
+p_Array[1].then(value =>{
+    console.log(value);
+})*/
+p_Array.then(collection =>{
+    console.log(collection)
+})
+
+//asyn funtio doesn't follow flow of execution all async funtion runs simultaneousily
+async function func3(params) {
+    console.log("Another async function")
+};
+async function asyncFuncCollection(params) {
+    let f2 = await func2();
+    let f3 = await func3(); //now that function will wait of func2() execution
+}
+asyncFuncCollection();
+
+</script>
+</html>

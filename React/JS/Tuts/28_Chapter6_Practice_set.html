@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter6_Practice set</title>
+</head>
+<body>
+    <script>
+        //PROBLEM-1 and 2
+        runAgain = true;
+        const canDrive=(age)=>{
+            if(age>18){
+                return true;
+            }
+            else{
+                false;
+            }}
+        while(runAgain){
+        let age = prompt("Enter Your Age");
+        age = Number.parseInt(age);
+
+        
+        if(canDrive(age)){
+            alert("You can!")
+        }
+        else{
+            alert("You can't");
+        }
+        runAgain = confirm(" Want to run again");
+    }
+       
+
+        //PROBLEM-3
+
+        let number = prompt("Enter Your Number ");
+        if( number > 4){
+            location.href=" https://google.com";
+        }
+        
+        let color = prompt("Enter your color")
+        document.body.style.background=color;
+    </script>
+</body>
+</html>

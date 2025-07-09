@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in Arrays</title>
+</head>
+<body>
+    <script>
+        //Normal for loop
+        let num = [54,5,2,96,35,78];
+        for(let i=0; i<num.length;i++){
+            console.log(num[i]);
+        } // use for of loop instead that 
+
+        //for each loop
+        num.forEach((element)=>{
+            console.log(element*element);
+        })
+        //traverse each element
+        //html collection is array(Array.from funtion is used)
+        //Array.from used to convert object into array colleciton
+        let name = "Harry"
+        let arr = Array.from(name);//converted 'name' string object into a array, by using Array.from()
+        console.log(arr);
+
+        for(let i of arr){
+            console.log(i);
+        }
+        for(let i in arr){
+            console.log(i);//array return index(keys) or keys in objects
+        }
+    </script>
+</body>
+</html>

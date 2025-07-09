@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Array Methods</title>
+</head>
+<body>
+    <script>
+        let num = [1,86,98,3,984,47,6,45];
+        delete num[0];
+        console.log(num)
+        console.log(num.length); //lenght w ill will be still same
+        num[0]=1;//adding again new element to the array.
+        console.log(num);
+
+        //Concat()
+        let arr1 = [46,9,8,",56",767,654];
+        let arr2 = [4546,59,988,",745dfdfs6",7567,6554];
+        let newConcatedArray = num.concat(arr1,arr2);
+        console.log(newConcatedArray);
+        //concat() metioned in last file #16 
+        //does not change existing array
+
+
+        //sort()
+        //it sort alphabetically like 
+        let list1 = [54,1,85,21,685,2,35514,345];
+        list1.sort(); 
+        /*
+        elements sorted aphabetically, 
+        elements are treated as string
+        so 1,2,21 etc here order not matter
+        !! more importantly this method modify the og array
+        */
+
+        console.log(list1);
+
+        //but we can do sorting through using comare funtion
+        let compare = (a,b) => {
+            return a-b;
+            // return b-a; descending order
+        }
+        list1.sort(compare);
+        console.log(list1);
+
+        //reverse()
+        list1.reverse()
+        console.log(list1);//make array reverse
+
+        //splice and slice
+        let list2 = [54,6,641,78,32,24,12,5];
+        //FUNC_SYNTAX - splice(index where to start, how many element to remove, elements which have to be added................)
+       deletedValues= list2.splice(2,2,101,102,103,104);
+        // 2 elements form index 2 will be deleted then new elements with start inserting after index 2
+        /*
+        and it will return deleted values,
+         hence deleted valuees has to be stored in a varible, 
+         so the variable will be object type
+         */
+        console.log(deletedValues," ", typeof deletedValues);
+        console.log(list2);
+
+        //slice
+        //(don't modify the current array)
+
+
+        //slice create new array from an array
+        newList = list2.slice(3); //from index 3 to last index will return and store in variable
+        console.log(typeof newList, newList);
+        //we can give starting and ending index to
+        newList1 = list2.slice(1,5); //index 5 is excluded
+        console.log(newList1);
+
+
+
+
+    </script>
+</body>
+</html>

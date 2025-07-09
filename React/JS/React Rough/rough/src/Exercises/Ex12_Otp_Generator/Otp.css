@@ -1,0 +1,81 @@
+body{
+    background-color: rgb(36, 43, 44);
+}
+.otpCont{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blueviolet; */
+    position: relative;
+    top: 35vh;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2vh;
+
+}
+.generatorBtn{
+    height: 7vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.8vh;
+    background-color: rgb(182, 182, 31);
+    border-radius: 10vh;
+    /* border: 2px solid red; */
+}
+.generatedOtp{
+    /* border: 2px solid green; */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    color:rgb(255, 12, 12);
+}
+.inputFieldCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+    font-size: 2vh;
+    gap:0.6vh;
+    color: white;
+}
+.inpAndDispCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2vh;
+}
+.inputField{
+    font-size: 3vh;
+    font-weight:600;
+    width: 3vh;
+    height: 4vh;
+    text-align: center;
+    color: brown;
+}
+.inpCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    /* border: 2px solid; */
+}
+.submitBtn{
+    /* text-align: center; */
+    height: 6vh;;
+    font-size: 2.5vh;
+    font-weight: bold;
+    border-radius: 3vh;
+    background-color: rgb(5, 146, 247);
+}
+.timer-text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.8vh;
+    font-weight: 400;
+    color: white;
+}
+.countdown{
+    font-size: 3vh;
+    font-weight: bold;
+    color:rgb(29, 211, 59);
+}

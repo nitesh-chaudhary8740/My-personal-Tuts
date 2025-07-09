@@ -1,0 +1,17 @@
+.toDoListInputComponent {
+    position: absolute;
+    height: 80vh;
+    width: 70vh;
+    border: 2px solid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%) translate(50px, 100px) scale(2, 3) rotate(45deg) skewX(30deg); */
+  }
+  .missedFieldsdAlert{
+    color:red;
+    font-weight: bold;
+  }
+  .missedFieldAlertt{
+    border: 2px solid ;
+  }

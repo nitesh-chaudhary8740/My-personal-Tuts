@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="Principal" id="t1" oninput="validate()">
+  <input type="text" placeholder="Time" id="t2" oninput="validate1()" disabled>
+  <input type="text" placeholder="Rate" id="t3" oninput="validate2()" disabled>
+  <input type="button" id="t5" value="Calculate" onclick="calc()" disabled>
+  
+  <input type="text" id="t4" value="output" readonly >
+</body>
+<script>
+    function calc(){
+    let p = parseFloat(document.getElementById("t1").value);
+    let t = parseFloat(document.getElementById("t2").value);
+    let r = parseFloat(document.getElementById("t3").value);
+   let x = p*r*t/100;
+   document.getElementById("t4").value="output is: "+x
+
+    }
+    function validate(){
+        if(Number.isNaN(parseFloat(document.getElementById('t1').value))){
+            document.getElementById('t2').disabled=true;
+        }
+        else{
+            document.getElementById('t2').disabled=false;
+        }
+    }
+    function validate1(){
+        if(Number.isNaN(parseFloat(document.getElementById('t2').value))){
+            document.getElementById('t3').disabled=true;
+        }
+        else{
+            document.getElementById('t3').disabled=false;
+        }
+    }
+    function validate2(){
+        if(Number.isNaN(parseFloat(document.getElementById('t3').value))){
+            document.getElementById('t5').disabled=true;
+        }
+        else{
+            document.getElementById('t5').disabled=false;
+        }
+    }
+</script>
+</html>

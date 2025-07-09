@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // syntax-fetch(url,{options})
+ let p = fetch("https://api.chucknorris.io/jokes/random");
+ p.then(res =>{
+    /*The res object in the first .then() block is indeed a Response object,
+     which contains information about the HTTP response.*/
+     console.log(res.status);
+     console.log(res.ok);
+     console.log(res.headers)
+    //  console.log(res.json())//one time read return will not work //VN#p.g. 11
+     
+    return res.json(); //json method help to access actual data in json form(js object Notation , object form);
+    //there is other method also like  blob()
+    //this contains status or metadata
+    //VN#p.g.9
+ }).catch(err =>{
+    console.log(err)
+ }).then(res =>{
+    console.log("this is: ",res.value)//for printing joke which is in 'value' key
+ })
+
+ //read more about response headers(which comes with request) and request headers(that we sent with fetch request)
+</script>
+</html>

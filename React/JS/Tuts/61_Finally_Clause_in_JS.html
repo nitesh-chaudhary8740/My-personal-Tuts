@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // finally execute if error occured or not
+    try {
+        let a = 9;
+        console.log("Runned!")
+        console.log(program);
+    } catch (error) {
+        console.log("error ",error)
+        // console.log(errorInCatchButFinallyWillWork);
+    }
+    finally{
+        console.log("Finally block");
+        //for final cleanups i.e.
+        // close the file
+        //exit the loop
+        //write to log file
+    }
+    // console.log("outside of fianlly");//this block not execute it is not caugth
+ 
+    const f = () =>{
+        try {
+        let a = 9;
+        console.log("Runned!")
+        // console.log(program);
+        return
+    } catch (error) {
+        console.log("error ",error)
+        // console.log(errorInCatchButFinallyWillWork);
+    }
+    finally{
+        console.log("Finally block");
+      
+    } 
+        }
+        f(); //if funtion is returned in try or catch block but still finally block is executing, this is power of finally
+        console.log("end");
+
+
+        //WN p.g. 7
+</script>
+</html>
