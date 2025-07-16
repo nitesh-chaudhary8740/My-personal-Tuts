@@ -1,23 +1,25 @@
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
+
 
 const app = express();
 const PORT = 3000;
 
-async function startServer() {
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    root: '../',
-  });
 
-  app.use(vite.middlewares);
 
-  app.listen(PORT, () => {
+app.get("/hello",(req,res)=>{
+  res.send("Hi")
+})
+app.route("/").get((req,res)=>{
+  console.log("req recived")
+  res.send("hi")
+})
+
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
-}
 
-startServer();
+
+
 
 // import express from 'express';
 // import { createServer as createViteServer } from 'vite';
