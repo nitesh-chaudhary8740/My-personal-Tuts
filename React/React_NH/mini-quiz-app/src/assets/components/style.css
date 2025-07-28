@@ -1,3 +1,9 @@
 .selected-option {
     background-color: blue;
 }
+.correct-selected{
+    background-color: green;
+}
+.incorrect-selected{
+    background-color: red;
+}

@@ -4,11 +4,6 @@ import "./style.css"
 function EachQuestion (props) {
 const {answersList,setScore,setIsSubmitted,question,allOptions,totalQuestions,currentQuestionIndex,setCurrentQuestionIndex,userResponses,setUserResponse} = props
 
-
-
-
-
-
 console.log("user respnse",userResponses)
 
   //methods
@@ -31,10 +26,11 @@ function calculateScore(userResponses,answerList){
                 if(userResponses[key] === answerList[key]) score+=3;
                 else if(key===key && userResponses[key] !== answerList[key] ) score-=2;
         }
-        setScore(score)
+        setScore(score)      //calculated score 
 }
 function checkResult(){
-  setIsSubmitted(true)
+  setIsSubmitted(true) // for rendering the  Result component conditionally
+  setCurrentQuestionIndex(0)
   calculateScore(userResponses,answersList)
   console.log("Answer List",answersList)
 }

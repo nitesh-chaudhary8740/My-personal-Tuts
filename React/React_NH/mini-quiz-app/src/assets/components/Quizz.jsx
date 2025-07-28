@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import EachQuestion from "./EachQuestion";
 import "./style.css"
 import Result from "./Result";
+import Timer from "./Timer";
 let render = 0;
 function Quizz() {
   const [loading, setLoading] = useState(true);
@@ -12,6 +13,8 @@ function Quizz() {
   const [userResponses, setUserResponse] = useState({});
   const [isSubmitted,setIsSubmitted] = useState(false)
   const [score,setScore] = useState(null)
+ 
+  const TIMER = 30;
   let tempAnswersHolderObject = {};
 
   async function fetchQuizData(signal) {
@@ -59,6 +62,7 @@ function Quizz() {
 }
 
 
+
   console.log(render, " data", data);
   return (
     <>
@@ -68,6 +72,7 @@ function Quizz() {
         ) :  (
          <div className="container">
           <h1>Mini Quizz APP</h1>
+          <Timer TIMER={TIMER} setIsSubmitted={setIsSubmitted} />
        <div> <strong>Category: </strong>{data[currentQuestionIndex].category}</div>
           
          {!isSubmitted? (<EachQuestion 
@@ -95,7 +100,7 @@ function Quizz() {
           setCurrentQuestionIndex={setCurrentQuestionIndex}
           userResponses={userResponses}
           setUserResponse={setUserResponse}
-          setScore = {setScore}
+        
           setIsSubmitted = {setIsSubmitted}
           />) }
           </div>
