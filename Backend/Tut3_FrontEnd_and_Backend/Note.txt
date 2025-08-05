@@ -1,2 +1,0 @@
-//axios fetch alternative
-//CORS policy solutions 1 . from backend using cors package

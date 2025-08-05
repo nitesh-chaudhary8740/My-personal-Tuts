@@ -2,9 +2,7 @@ import React, {  } from 'react'
 import "./style.css"
 
 function EachQuestion (props) {
-const {answersList,setScore,setIsSubmitted,question,allOptions,totalQuestions,currentQuestionIndex,setCurrentQuestionIndex,userResponses,setUserResponse} = props
-
-console.log("user respnse",userResponses)
+const {calculateScore,answersList,setIsSubmitted,question,allOptions,totalQuestions,currentQuestionIndex,setCurrentQuestionIndex,userResponses,setUserResponse} = props
 
   //methods
 
@@ -20,19 +18,12 @@ function previousHandler(){
   if((currentQuestionIndex<1)) return // response will not be added in attemp reached 10
   setCurrentQuestionIndex(prev=>prev-1)
 }
-function calculateScore(userResponses,answerList){
-        let score = 0
-        for (const key in userResponses){
-                if(userResponses[key] === answerList[key]) score+=3;
-                else if(key===key && userResponses[key] !== answerList[key] ) score-=2;
-        }
-        setScore(score)      //calculated score 
-}
+
 function checkResult(){
   setIsSubmitted(true) // for rendering the  Result component conditionally
   setCurrentQuestionIndex(0)
   calculateScore(userResponses,answersList)
-  console.log("Answer List",answersList)
+
 }
 
   return (

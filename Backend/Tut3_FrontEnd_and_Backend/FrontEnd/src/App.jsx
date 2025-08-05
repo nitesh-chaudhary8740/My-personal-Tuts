@@ -1,40 +1,34 @@
 
-import  { useState } from 'react'
+import axios from "axios"
+import { useEffect, useState } from 'react'
 import './App.css'
-import axios from 'axios'
-import { useEffect } from 'react'
-
 
 function App() {
-  const [jokes,setJokes] = useState([])
-  const [clicks,setClicks] =useState(0)
+  const [jokes,setJokes] = useState(null)
   useEffect(()=>{
-    axios.get('/api/jokes').
-    then((response)=>{
+    axios.get("http://localhost:3000/api")
+    .then((response)=>{
         setJokes(response.data)
+        console.log(response.data)
+    }).catch((e)=>{
+      console.log(e)
     })
   },[])
+
   return (
-  <>
-  <h1>FrontEnd + Backend clicks : {clicks} </h1>
-  ,<button onClick={()=>{
-    setClicks(clicks+1)
-  }}>click</button>
-  {jokes.length}
-  {
-    jokes.map((joke)=>{
-        return <div key={joke.id}>
-          <h3>
-            {joke.title}
-          </h3>
-          <p>
-            {joke.content}
-          </p>
+    <>
+    <h1>this is working</h1>
+    {
+   jokes && jokes.map((e,i)=>{
+    return    <div key={i}> 
+        <h3>this is title{e.title}</h3>
+        <p>{e.joke}</p>
         </div>
-    })
-  }
-  </>
-  )
+      })
+    
+    }
+    </>)
+  
 }
 
 export default App

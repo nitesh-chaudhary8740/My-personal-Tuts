@@ -10,7 +10,7 @@ function previousHandler(){
   if((currentQuestionIndex<1)) return // response will not be added in attemp reached 10
   setCurrentQuestionIndex(prev=>prev-1)
 }  
-console.log("Anserlist in Result",answersList)
+
   return (
   <>
  <span>

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-function Timer({TIMER,setIsSubmitted}) { //TIMER Is constant (value:30)
+function Timer({TIMER,setIsSubmitted,calculateScore,answersList,userResponses}) { //TIMER Is constant (value:30)
      const [countDown,setContDown] = useState(TIMER);
     useEffect(()=>{
      if(countDown<=0) {setIsSubmitted(true)
+      calculateScore(userResponses,answersList)
          return}
     const timerInterval =  setInterval(() => {
         setContDown(prev=>prev-1)

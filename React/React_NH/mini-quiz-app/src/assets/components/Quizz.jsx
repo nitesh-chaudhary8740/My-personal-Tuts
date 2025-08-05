@@ -3,7 +3,6 @@ import EachQuestion from "./EachQuestion";
 import "./style.css"
 import Result from "./Result";
 import Timer from "./Timer";
-let render = 0;
 function Quizz() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
@@ -14,8 +13,8 @@ function Quizz() {
   const [isSubmitted,setIsSubmitted] = useState(false)
   const [score,setScore] = useState(null)
  
-  const TIMER = 30;
-  let tempAnswersHolderObject = {};
+  const TIMER = 5;
+  let tempAnswersHolderObject = {}; //used to++
 
   async function fetchQuizData(signal) {
     try {
@@ -44,7 +43,16 @@ function Quizz() {
       controller.abort();
     };
   },[]);
+ function calculateScore(userResponses,answerList){
  
+        let score = 0
+       
+        for (const key in userResponses){
+                if(userResponses[key] === answerList[key]) score+=3;
+                else if(key===key && userResponses[key] !== answerList[key] ) score-=2;
+        }
+        setScore(score)      //calculated score 
+}
  function shuffleOptionsOrder(questionsArray){
 
    const arrayOfShuffledOptions =  questionsArray.map((each_question,i)=>{
@@ -63,7 +71,7 @@ function Quizz() {
 
 
 
-  console.log(render, " data", data);
+
   return (
     <>
       <div>
@@ -72,10 +80,17 @@ function Quizz() {
         ) :  (
          <div className="container">
           <h1>Mini Quizz APP</h1>
-          <Timer TIMER={TIMER} setIsSubmitted={setIsSubmitted} />
+         {!isSubmitted && <Timer 
+         TIMER={TIMER} 
+         setIsSubmitted={setIsSubmitted} 
+         calculateScore= {calculateScore} 
+         userResponses = {userResponses}
+         answersList = {answersList}
+         />}
        <div> <strong>Category: </strong>{data[currentQuestionIndex].category}</div>
           
          {!isSubmitted? (<EachQuestion 
+         calculateScore ={calculateScore}
           key={`q-${currentQuestionIndex + 1}`}
           totalQuestions = {data?.length}
           allQuestions = {data}
@@ -90,7 +105,7 @@ function Quizz() {
           setIsSubmitted = {setIsSubmitted}
           />):
           (<Result 
-            score={score}
+          score={score}
           key={`result-${currentQuestionIndex + 1}`}
           totalQuestions = {data?.length}
           answersList = {answersList}
