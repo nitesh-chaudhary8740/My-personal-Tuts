@@ -8,7 +8,7 @@ class API_Error extends Error{
     super(message);
     this.statusCode = statusCode
     this.data = null
-    this.message = message
+    this.message = message//is it readundent, because super class constructor is already called with passed custom message?
     this.success = false
     this.errors = errors
     if(stack){
