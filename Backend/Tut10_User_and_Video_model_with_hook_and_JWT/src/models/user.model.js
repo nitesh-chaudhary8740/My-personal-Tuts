@@ -21,7 +21,7 @@ const userSchema = new Schema({
         type:String,
         required:true,
         trim:true,
-        index:true,
+     
     },
     avatar: {
         type:String,//couldnary
@@ -53,8 +53,8 @@ userSchema.pre("save", async function (next){  //prehook middleware
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
 }        
-userSchema.methods.generateAccessToken = async function (password) {
-    return await jwt.sign({
+userSchema.methods.generateAccessToken =  function (password) {
+    return jwt.sign({
         _id :this._id,
         email: this.email,
         username :this.username,

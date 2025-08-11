@@ -34,6 +34,6 @@ owner:{
     ref:"User"
 }
 },{timestamps:true})
-videoSchema.plugin(mongooseAggregatePaginate)
+videoSchema.plugin(mongooseAggregatePaginate)//this will use to write Aggregate queries
 
 export const Video = mongoose.model("Video",videoSchema)

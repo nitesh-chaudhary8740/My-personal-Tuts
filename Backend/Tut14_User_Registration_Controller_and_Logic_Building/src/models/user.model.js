@@ -47,7 +47,7 @@ const userSchema = new Schema({
 userSchema.pre("save", async function (next){  //prehook middleware
     //agar user profile updation se dauraan  password na chnage hua ho
     if(!this.isModified("password")) return next()//then terminate the middleware and pass next()
-    this.password = bcrypt.hash(this.password,10)//which feild has to be decrypt, and rounds
+    this.password = await bcrypt.hash(this.password,10)//which feild has to be decrypt, and rounds
     next;
 }) 
 userSchema.methods.isPasswordCorrect = async function (password) {

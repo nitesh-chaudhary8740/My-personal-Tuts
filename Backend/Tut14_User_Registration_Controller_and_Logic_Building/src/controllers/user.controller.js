@@ -1,6 +1,9 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { API_Error } from "../utils/api.errors.js";
 import { User } from "../models/user.model.js";
+import { upload } from "../middlewares/multer.middleware.js";
+import { uploadCloudinary } from "../utils/cloudinary.util.js";
+import { API_Response } from "../utils/api.response.js";
 const registerUser = asyncHandler(async (req, res) => {
   //get user details from frontend
   //validation if all details are formatily correct and all info is provided
@@ -24,7 +27,36 @@ const existedUser = User.findOne({
     $or :[{userName},{email}] //shorthand of [{userName:userName},{email:email}]
 })
 if (existedUser) {
-    throw new API_Error(400,"this username or email already exists")
+    throw new API_Error(409,"this username or email already exists")
 }
-});
+
+const avatarLocalPath=req.files?.avatar[0]?.path;
+const coverImageLocalPath=req.files?.coverImage[0]?.path;
+if (!avatarLocalPath) {
+    throw new API_Error(400,"upload avatar image")
+}
+console.log("req.files",req.files)
+console.log("avatar",avatarLocalPath)
+console.log("coverImage",avatarLocalPath)
+const cloudnaryAvatarUpload=await uploadCloudinary(avatarLocalPath)
+const cloudnaryCoverImageUpload=await uploadCloudinary(coverImageLocalPath)
+if (!cloudnaryAvatarUpload) {
+    throw new API_Error(400,"upload avatar image in cloudinary is failed")
+}
+const user= await User.create({
+  fullName,
+  avatar:cloudnaryAvatarUpload.url,
+  coverImage:cloudnaryCoverImageUpload?.url||"",
+  email,
+  password,
+  userName:userName.toLowercase()
+})
+const createdUser = User.findById(user._id).select("-password -refreshToken")
+if(!createdUser){
+  throw new API_Error(500, "user not created")
+}
+console.log("created user is",createdUser)
+return res.status(201).json(new API_Response(201,createdUser,"user registered sucessfully"))
+}
+);
 export default registerUser;
